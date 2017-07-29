@@ -1,0 +1,11 @@
+# in_small_steps
+Teaching myself programming in small steps. Each folder should be a FINISHED small project.
+
+WHAT IS THIS?
+This is a collection of small applications (usually written with C++/Qt/QML, but not always).
+Each folder in the root directory should contain a small and FUNCTIONING project.
+Those projects not always contain something practically applicable in the real world, but that's not their purpose.
+The real purpose here is to study some aspects of C++ or programming in general.
+If the app in some folder doesn't work, it means it's not finished yet.
+
+by Oleksii <DarkSpectre> Kshenskyi.
