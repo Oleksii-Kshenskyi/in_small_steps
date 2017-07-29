@@ -40,7 +40,7 @@ BASIC REQUIREMENTS:
 Graphical User Interface:
 NS: CL-GUI-0001 - The system shall have 10 numeric buttons.
 NS: CL-GUI-0002 - The system shall have a "dot" button.
-NS: CL-GUI-0003 - The system shall have a numeric indicator field [IN hereafter].
+NS: CL-GUI-0003 - The system shall have a numeric display field [DSP hereafter].
 NS: CL-GUI-0004 - The system shall have a C button.
 NS: CL-GUI-0005 - The system shall have a CA (Clear All) button.
 NS: CL-GUI-0006 - The system shall have an = (Equals sign) button..
@@ -48,23 +48,28 @@ NS: CL-GUI-0007 - The system shall have four arithmetic operations buttons (+, -
 NS: CL-GUI-0008 - The system shall have an OFF button colored ORANGE.
 
 GUI Behaviour:
-NS: CL-UIB-0001 - The IN shall be responsible for the output of a current operand.
-NS: CL-UIB-0002 - Numeric buttons shall append IN with their corresponding numbers.
-NS: CL-UIB-0003 - C button shall cancel the current operand in IN and change it to ZERO.
+NS: CL-UIB-0001 - The DSP shall be responsible for the output of a current operand.
+NS: CL-UIB-0002 - Numeric buttons shall append DSP with their corresponding numbers.
+NS: CL-UIB-0003 - C button shall cancel the current operand on DSP and change it to ZERO.
 NS: CL-UIB-0004 - CA button shall cancel ALL the operands and operations turning everything to ZERO/UNINITIALIZED.
 NS: CL-UIB-0005 - Arithmetic operations buttons (+,-,*,/) should be pressed between entering operand 1 and operand 2. They shall set the arithmetic operation to be performed between those two operands.
 NS: CL-UIB-0006 - The OFF button shall make the system terminate.
-NS: CL-UIB-0007 - The result has been calculated and shown in IN => The result shall become first operand (operation and operand 2 shall be canceled).
+NS: CL-UIB-0007 - =?= The result has been calculated and shown on DSP =?= 
+                  =?= Arithmetic operation button pressed =?=
+                  The result shall become first operand (operation and operand 2 shall be canceled).
+NS: CL-UIB-0008 - =?= The result has been calculated and shown on DSP =?= 
+                  =?= Numeric button pressed =?=
+                  DSP contents shall be substituted with this numeric button. Input of new operand 1 started. ALL operands/operations turned to ZERO/UNINITIALIZED.
 
 Equals Sign Behaviour:
-NS: CL-ESB-0001 - =?= ALL THREE parts of the operation have been set (operand 1, operation, operand 2) =?= Equals sign button shall display the result of the operation.
+NS: CL-ESB-0001 - =?= ALL THREE parts of the operation have been set (operand 1, operation, operand 2) =?= Equals sign button shall display the result of the operation on the DSP.
 NS: CL-ESB-0002 - =?= Operand 2 hasn't been set =?= Equals sign button does nothing.
 
 Floating Point Operations:
 The "dot" button's behaviour is described here.
 NS: CL-FPO-0001 - The "dot" button shall be responsible for all the floating point operations. Dot button shall have a set of rules to describe its behaviour.
-NS: CL-FPO-0002 - The "dot" button shall put a "." symbol to IN according to conditions stated in requirements of FPO section following this one.
-NS: CL-FPO-0003 - =?= No "." symbol in IN yet, value's not ZERO =?= The "dot" button puts one "." in IN.
-NS: CL-FPO-0004 - =?= No "." symbol in IN yet, value's ZERO =?= The "dot" button makes current IN value "0.", NOT ".", so resulting number is <0.35>, NOT <.35>.
-NS: CL-FPO-0005 - =?= "." symbol is already in IN =?= The "dot" button doesn't do anything. No number with two or more "." symbols should be possible to input in IN.
-NS: CL-FPO-0006 - All the behaviour should be RESET after a user presses any of the cancel buttons <C, CA>.
+NS: CL-FPO-0002 - The "dot" button shall put a "." symbol to DSP according to conditions stated in requirements of FPO section following this one.
+NS: CL-FPO-0003 - =?= No "." symbol on DSP yet, value's not ZERO =?= The "dot" button puts one "." on DSP.
+NS: CL-FPO-0004 - =?= No "." symbol on DSP yet, value's ZERO =?= The "dot" button makes current DSP value "0.", NOT ".", so resulting number is <0.35>, NOT <.35>.
+NS: CL-FPO-0005 - =?= "." symbol is already on DSP =?= The "dot" button doesn't do anything. No number with two or more "." symbols should be possible to display on DSP.
+NS: CL-FPO-0006 - All the floating point behaviour should be RESET after a user presses any of the cancel buttons <C, CA>.
