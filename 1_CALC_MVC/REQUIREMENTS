@@ -38,14 +38,14 @@ x => y - y happens AFTER an event from x has happened; x and y are requirement n
 BASIC REQUIREMENTS:
 
 Graphical User Interface:
-NS: CL-GUI-0001 - The system shall have 10 numeric buttons.
-NS: CL-GUI-0002 - The system shall have a "dot" button.
-NS: CL-GUI-0003 - The system shall have a numeric display field [DSP hereafter].
-NS: CL-GUI-0004 - The system shall have a C button.
-NS: CL-GUI-0005 - The system shall have a CA (Clear All) button.
-NS: CL-GUI-0006 - The system shall have an = (Equals sign) button..
-NS: CL-GUI-0007 - The system shall have four arithmetic operations buttons (+, -, *, /).
-NS: CL-GUI-0008 - The system shall have an OFF button colored ORANGE.
+CM: CL-GUI-0001 - The system shall have 10 numeric buttons.
+CM: CL-GUI-0002 - The system shall have a "dot" button.
+CM: CL-GUI-0003 - The system shall have a numeric display field [DSP hereafter].
+CM: CL-GUI-0004 - The system shall have a C button.
+CM: CL-GUI-0005 - The system shall have a CA (Clear All) button.
+CM: CL-GUI-0006 - The system shall have an = (Equals sign) button..
+CM: CL-GUI-0007 - The system shall have four arithmetic operations buttons (+, -, *, /).
+CM: CL-GUI-0008 - The system shall have an OFF button.
 
 GUI Behaviour:
 NS: CL-UIB-0001 - The DSP shall be responsible for the output of a current operand.
