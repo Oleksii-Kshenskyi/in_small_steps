@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>840</x>
-      <y>490</y>
+      <x>800</x>
+      <y>540</y>
       <w>210</w>
       <h>90</h>
     </coordinates>
@@ -20,25 +20,27 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>530</x>
-      <y>490</y>
+      <x>490</x>
+      <y>540</y>
       <w>210</w>
-      <h>100</h>
+      <h>130</h>
     </coordinates>
     <panel_attributes>SetterRule
 --
 -teDisplay: QTextEdit
+-model: CLModelData*
 --
 +initialize(): void
 +execute(): void
-+setDisplay(QTextEdit*): void</panel_attributes>
++setDisplay(QTextEdit*): void
++~SetterRule()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>730</x>
-      <y>520</y>
+      <x>690</x>
+      <y>570</y>
       <w>130</w>
       <h>50</h>
     </coordinates>
@@ -50,8 +52,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>840</x>
-      <y>230</y>
+      <x>800</x>
+      <y>280</y>
       <w>220</w>
       <h>100</h>
     </coordinates>
@@ -67,8 +69,8 @@ IDisplaySetter
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>930</x>
-      <y>320</y>
+      <x>890</x>
+      <y>370</y>
       <w>30</w>
       <h>190</h>
     </coordinates>
@@ -78,8 +80,8 @@ IDisplaySetter
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>530</x>
-      <y>240</y>
+      <x>490</x>
+      <y>290</y>
       <w>200</w>
       <h>140</h>
     </coordinates>
@@ -94,8 +96,8 @@ IDisplaySetter
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>360</y>
+      <x>580</x>
+      <y>410</y>
       <w>30</w>
       <h>150</h>
     </coordinates>
@@ -105,8 +107,8 @@ IDisplaySetter
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>160</x>
-      <y>530</y>
+      <x>120</x>
+      <y>580</y>
       <w>240</w>
       <h>30</h>
     </coordinates>
@@ -116,8 +118,8 @@ IDisplaySetter
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
-      <y>520</y>
+      <x>350</x>
+      <y>570</y>
       <w>160</w>
       <h>50</h>
     </coordinates>
@@ -129,20 +131,21 @@ IDisplaySetter
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>450</x>
-      <y>80</y>
+      <x>410</x>
+      <y>130</y>
       <w>370</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>initialize() connects Qt signal to rule's execute() method.
-setDisplay() informs rule which display to set.</panel_attributes>
+setDisplay() informs rule which display to set.
+The destructor disconnects the signal.</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>140</y>
+      <x>580</x>
+      <y>190</y>
       <w>30</w>
       <h>110</h>
     </coordinates>
@@ -152,8 +155,8 @@ setDisplay() informs rule which display to set.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1090</x>
-      <y>490</y>
+      <x>1050</x>
+      <y>540</y>
       <w>460</w>
       <h>150</h>
     </coordinates>
@@ -172,8 +175,8 @@ setDisplay() informs rule which display to set.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1090</x>
-      <y>210</y>
+      <x>1050</x>
+      <y>260</y>
       <w>460</w>
       <h>120</h>
     </coordinates>
@@ -190,8 +193,8 @@ IModelInformation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1310</x>
-      <y>320</y>
+      <x>1270</x>
+      <y>370</y>
       <w>30</w>
       <h>190</h>
     </coordinates>
@@ -201,8 +204,8 @@ IModelInformation
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1000</x>
-      <y>320</y>
+      <x>960</x>
+      <y>370</y>
       <w>340</w>
       <h>190</h>
     </coordinates>
