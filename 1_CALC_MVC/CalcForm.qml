@@ -222,6 +222,12 @@ Rectangle {
                 highlighted: false
                 font.pointSize: 24
 
+                onClicked: {
+
+                    teMainNumericDisplay.text = testCalculator.test()
+
+                }
+
             }
 
             Button {
