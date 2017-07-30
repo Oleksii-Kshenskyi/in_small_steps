@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>490</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ViewDisplaySetter
+--
+-rules: SetterRule [*]
+--
+/+AddRule(SetterRule*): void/
+/+RemoveRule(SetterRule*): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>490</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>SetterRule
+--
+-teDisplay: QTextEdit
+--
++initialize(): void
++execute(): void
++setDisplay(QTextEdit*): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>730</x>
+      <y>520</y>
+      <w>130</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+
+       [0..*]</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>230</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IDisplaySetter
+--
+-rules: SetterRule [*]
+--
+/+AddRule(SetterRule*): void/
+/+RemoveRule(SetterRule*): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>320</y>
+      <w>30</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>530</x>
+      <y>240</y>
+      <w>200</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>ISetterRule
+--
++initialize(): void
++execute(): void
++setDisplay(QTextEdit*): void
++~ISetterRule()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>360</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>530</y>
+      <w>240</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>teMainNumericDisplay: QTextEdit</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>520</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+&lt; sets value of</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>450</x>
+      <y>80</y>
+      <w>370</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>initialize() connects Qt signal to rule's execute() method.
+setDisplay() informs rule which display to set.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>140</y>
+      <w>30</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>490</y>
+      <w>460</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>ControllerDisplaySetter
+--
+-rules: SetterRule [*]
+-firstOperand: long
+-secondOperand: long
+-operation: IArithmeticOperation*
+--
+/+AddRule(SetterRule*): void/
+/+RemoveRule(SetterRule*): void/
+/+updateInfo(op1: long, op2: long, operation: IArithmeticOperation*): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>210</y>
+      <w>460</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IModelInformation
+--
+-firstOperand: long
+-secondOperand: long
+-operation: IArithmeticOperation*
+--
+/+updateInfo(op1: long, op2: long, operation: IArithmeticOperation*): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1310</x>
+      <y>320</y>
+      <w>30</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>320</y>
+      <w>340</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;320.0;80.0;320.0;170.0</additional_attributes>
+  </element>
+</diagram>
