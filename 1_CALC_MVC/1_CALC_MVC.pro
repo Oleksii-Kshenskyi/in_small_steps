@@ -2,8 +2,12 @@ QT += qml quick
 
 CONFIG += c++11
 
+INCLUDEPATH += %CD%/model
+
 SOURCES += main.cpp \
-    clmodel.cpp \
+    model/cloperations.cpp \
+    model/clmodeldata.cpp \
+    model/clmodel.cpp \
     clbuilder.cpp
 
 RESOURCES += qml.qrc
@@ -31,5 +35,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #!isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    clmodel.h \
-    clbuilder.h
+    clbuilder.h \
+    model/clmodel.h \
+    model/clmodeldata.h \
+    model/cloperations.h \

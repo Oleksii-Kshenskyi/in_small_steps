@@ -1,5 +1,5 @@
 The File:
-MVC Calculator REQUIREMENTS file, version 1.0.0.0 <== This version always shows the intended version that CALC application is going to get AFTER all current requirements are fulfilled.
+MVC Calculator REQUIREMENTS file, version 0.1.0.0 <== This version always shows the intended version that CALC application is going to get AFTER all current requirements are fulfilled.
 
 The System:
 The system is a basic calculator. It should be able to perform four basic arithmetic operations with integers and floats, 

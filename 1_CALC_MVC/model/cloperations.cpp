@@ -1,35 +1,4 @@
-#include "clmodel.h"
-
-CLModel::CLModel(QScopedPointer<CLIArithmeticOperation>& cloNewPointer)
-{
-    setOperation(cloNewPointer);
-}
-
-/*QScopedPointer<CLIArithmeticOperation>& CLModel::getOperation()
-{
-    return cloPointer;
-}*/
-
-qreal CLIArithmeticOperation::getResult()
-{
-    return clmCurrentModel->getResult();
-}
-
-qreal CLModel::getResult()
-{
-    return cloPointer->getResult();
-}
-
-void CLModel::setOperation(QScopedPointer<CLIArithmeticOperation>& cloNewPointer)
-{
-    cloPointer.swap(cloNewPointer);
-}
-
-CLModelData::CLModelData(qreal fNewFirst, qreal fNewSecond)
-    : fFirstOperand(fNewFirst), fSecondOperand(fNewSecond)
-{
-
-}
+#include "cloperations.h"
 
 CLIArithmeticOperation::CLIArithmeticOperation(CLModelData* clmNewModel)
     : clmCurrentModel(clmNewModel)
@@ -40,6 +9,11 @@ CLIArithmeticOperation::CLIArithmeticOperation(CLModelData* clmNewModel)
 CLIArithmeticOperation::~CLIArithmeticOperation()
 {
 
+}
+
+qreal CLIArithmeticOperation::getResult()
+{
+    return clmCurrentModel->getResult();
 }
 
 CLOAddition::CLOAddition(CLModelData* clmNewModel) : CLIArithmeticOperation(clmNewModel)
@@ -80,34 +54,4 @@ void CLOMultiplication::execute()
 void CLODivision::execute()
 {
     clmCurrentModel->setResult(clmCurrentModel->getFirst() / clmCurrentModel->getSecond());
-}
-
-void CLModelData::setFirst(qreal fNewFirst)
-{
-    fFirstOperand = fNewFirst;
-}
-
-qreal CLModelData::getFirst()
-{
-    return fFirstOperand;
-}
-
-void CLModelData::setSecond(qreal fNewSecond)
-{
-    fSecondOperand = fNewSecond;
-}
-
-qreal CLModelData::getSecond()
-{
-    return fSecondOperand;
-}
-
-void CLModelData::setResult(qreal fNewResult)
-{
-    fResult = fNewResult;
-}
-
-qreal CLModelData::getResult()
-{
-    return fResult;
 }

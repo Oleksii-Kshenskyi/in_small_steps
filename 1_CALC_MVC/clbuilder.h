@@ -5,7 +5,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include "clmodel.h"
+#include "model/clmodel.h"
 #include <QString>
 #include <QDebug>
 #include "clbuilder.h"
