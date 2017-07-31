@@ -15,7 +15,11 @@ class CLTestBuilder: public QObject
     Q_OBJECT
   public:
 
-    Q_INVOKABLE QString test();
+    Q_INVOKABLE QString testAddition();
+    Q_INVOKABLE QString testSubstraction();
+    Q_INVOKABLE QString testMultiplication();
+    Q_INVOKABLE QString testDivision();
+    void testSetOperationInModel();
 
 };
 

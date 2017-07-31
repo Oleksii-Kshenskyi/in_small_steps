@@ -63,6 +63,8 @@ Rectangle {
             text: qsTr("OFF")
             font.pointSize: 24
             highlighted: false
+
+            onClicked: Qt.quit()
         }
 
         //Column {
@@ -224,7 +226,7 @@ Rectangle {
 
                 onClicked: {
 
-                    teMainNumericDisplay.text = testCalculator.test()
+                    teMainNumericDisplay.text = testCalculator.testAddition()
 
                 }
 
@@ -240,6 +242,12 @@ Rectangle {
                 highlighted: false
                 font.pointSize: 24
 
+                onClicked: {
+
+                    teMainNumericDisplay.text = testCalculator.testSubstraction()
+
+                }
+
             }
 
             Button {
@@ -252,6 +260,12 @@ Rectangle {
                 highlighted: false
                 font.pointSize: 24
 
+                onClicked: {
+
+                    teMainNumericDisplay.text = testCalculator.testMultiplication()
+
+                }
+
             }
 
             Button {
@@ -263,6 +277,11 @@ Rectangle {
                 text: qsTr("/")
                 highlighted: false
                 font.pointSize: 24
+                onClicked: {
+
+                    teMainNumericDisplay.text = testCalculator.testDivision()
+
+                }
 
             }
         //}
