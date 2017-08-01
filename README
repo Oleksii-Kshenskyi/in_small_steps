@@ -14,5 +14,11 @@ A calculator based on Model-View-Controller pattern.
 The goal here is not to create a calculator per se, but to undestand the basics of MVC and SOLID.
 Calculator should contain a "Number" field, number buttons, a comma, equal sign, reset buttons, and the basic arithmetic operations (+,-,*,/).
 Nothing fancy is expected here. Do this in MVC, get SOLID where you can, and you're good to go.
+CALC MVC TO DO:
+Deal with adding new Setter Rules:
+- Either by move constructing (addRule() argument would be an rvalue reference and probably should be using std::move inside);
+  Get QScoped back. It works with move construction as of Qt 5.9.
+- Or by introducing templated arguments and constructing Setter Rules inside the function.
+Make sure to try your best with the move construction first though. This is a much better resolution!
 
 by Oleksii <DarkSpectre> Kshenskyi.
