@@ -17,7 +17,8 @@ Nothing fancy is expected here. Do this in MVC, get SOLID where you can, and you
 CALC MVC TO DO:
 Deal with adding new Setter Rules:
 - Either by move constructing (addRule() argument would be an rvalue reference and probably should be using std::move inside);
-  Get QScoped back. It works with move construction as of Qt 5.9.
+  Get QScopedPointer back. It works with move construction as of Qt 5.9. UPDATE: Or does it? 
+  No clear move constructor in documentation. Will have to investigate this myself.
 - Or by introducing templated arguments and constructing Setter Rules inside the function.
 Make sure to try your best with the move construction first though. This is a much better resolution!
 
