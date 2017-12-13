@@ -1,0 +1,12 @@
+This is a much more concise and easy-to-understand file aimed at being just as precise and fast as possible in compiling a set of goals of the application.
+Full-fledged requirements, when they're not for the BIG commercial project, they're just a waste of time. Simply because a small app that's being written for
+studying shouldn't need those large expansive requirements.
+WHAT SHOULD THE APP DO?
+- Number buttons [0-9] append a number to the current entity in the text field.
+- C button clears EVERYTHING [input in the text field, both operands and an operation].
+- CE button [change CA to CE BTW] clears last input [meaning it clears what's currenetly in the text field].
+- Arithmetic operation buttons should be clicked between inputting the operands and they specify what operation is to be performed.
+[DONE] - OFF button closes the application
+- Dot [.] button adds a dot to the current input in the text field. It should only be put once. If it's already in the input, it should be blocked from doing anything.
+- Equals sign button [=] should show the current result or following results [as if we're repeating the operation]. 
+  Example: 30 + 30, [=] pressed, 60 appears. If [=] is pressed one more time, 90 appears. Once more, and 120 appears, etc.

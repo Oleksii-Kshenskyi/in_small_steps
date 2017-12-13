@@ -6,6 +6,8 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include "model/clmodel.h"
+#include "model/cloperations.h"
+#include "model/clmodeldata.h"
 #include <QString>
 #include <QDebug>
 #include "clbuilder.h"

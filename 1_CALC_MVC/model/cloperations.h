@@ -2,43 +2,44 @@
 #define CLOPERATIONS_H
 
 #include "model/clmodeldata.h"
+#include <memory>
 
 class CLIArithmeticOperation
 {
   public:
-    CLIArithmeticOperation(CLModelData* clmNewModel);
+    CLIArithmeticOperation(std::shared_ptr<CLModelData> clmNewModel);
     virtual ~CLIArithmeticOperation();
     virtual void execute() = 0;
     qreal getResult();
   protected:
-    CLModelData* clmCurrentModel;
+    std::shared_ptr<CLModelData> clmCurrentModel;
 };
 
 class CLOAddition: public CLIArithmeticOperation
 {
   public:
-    CLOAddition(CLModelData* clmNewModel);
+    CLOAddition(std::shared_ptr<CLModelData> clmNewModel);
     void execute();
 };
 
 class CLOSubstraction: public CLIArithmeticOperation
 {
   public:
-    CLOSubstraction(CLModelData* clmNewModel);
+    CLOSubstraction(std::shared_ptr<CLModelData> clmNewModel);
     void execute();
 };
 
 class CLOMultiplication: public CLIArithmeticOperation
 {
   public:
-    CLOMultiplication(CLModelData* clmNewModel);
+    CLOMultiplication(std::shared_ptr<CLModelData> clmNewModel);
     void execute();
 };
 
 class CLODivision: public CLIArithmeticOperation
 {
   public:
-    CLODivision(CLModelData* clmNewModel);
+    CLODivision(std::shared_ptr<CLModelData> clmNewModel);
     void execute();
 };
 

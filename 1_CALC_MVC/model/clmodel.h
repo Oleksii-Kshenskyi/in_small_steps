@@ -1,17 +1,17 @@
 #ifndef CLMODEL_H
 #define CLMODEL_H
 #include <QtGlobal>
-#include <QScopedPointer>
+#include <memory>
 #include "model/cloperations.h"
 
 class CLModel
 {
   public:
-    CLModel(QScopedPointer<CLIArithmeticOperation>& cloNewPointer);
+    CLModel(std::shared_ptr<CLIArithmeticOperation> cloNewPointer);
     qreal getResult();
-    void setOperation(QScopedPointer<CLIArithmeticOperation>& cloNewPointer);
+    void setOperation(std::shared_ptr<CLIArithmeticOperation> cloNewPointer);
   private:
-    QScopedPointer<CLIArithmeticOperation> cloPointer;
+    std::shared_ptr<CLIArithmeticOperation> cloPointer;
 };
 
 

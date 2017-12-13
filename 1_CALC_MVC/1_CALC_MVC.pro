@@ -1,6 +1,6 @@
 QT += qml quick
 
-CONFIG += c++11
+CONFIG += c++14
 
 INCLUDEPATH += %CD%/model
 
@@ -8,7 +8,9 @@ SOURCES += main.cpp \
     model/cloperations.cpp \
     model/clmodeldata.cpp \
     model/clmodel.cpp \
-    clbuilder.cpp
+    clbuilder.cpp \
+    clsetterrules.cpp \
+    clviewsetter.cpp
 
 RESOURCES += qml.qrc
 
@@ -39,3 +41,5 @@ HEADERS += \
     model/clmodel.h \
     model/clmodeldata.h \
     model/cloperations.h \
+    clsetterrules.h \
+    clviewsetter.h

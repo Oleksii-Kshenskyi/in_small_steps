@@ -1,6 +1,6 @@
 #include "cloperations.h"
 
-CLIArithmeticOperation::CLIArithmeticOperation(CLModelData* clmNewModel)
+CLIArithmeticOperation::CLIArithmeticOperation(std::shared_ptr<CLModelData> clmNewModel)
     : clmCurrentModel(clmNewModel)
 {
 
@@ -16,22 +16,22 @@ qreal CLIArithmeticOperation::getResult()
     return clmCurrentModel->getResult();
 }
 
-CLOAddition::CLOAddition(CLModelData* clmNewModel) : CLIArithmeticOperation(clmNewModel)
+CLOAddition::CLOAddition(std::shared_ptr<CLModelData> clmNewModel) : CLIArithmeticOperation(clmNewModel)
 {
     execute();
 }
 
-CLOSubstraction::CLOSubstraction(CLModelData* clmNewModel) : CLIArithmeticOperation(clmNewModel)
+CLOSubstraction::CLOSubstraction(std::shared_ptr<CLModelData> clmNewModel) : CLIArithmeticOperation(clmNewModel)
 {
     execute();
 }
 
-CLOMultiplication::CLOMultiplication(CLModelData* clmNewModel) : CLIArithmeticOperation(clmNewModel)
+CLOMultiplication::CLOMultiplication(std::shared_ptr<CLModelData> clmNewModel) : CLIArithmeticOperation(clmNewModel)
 {
     execute();
 }
 
-CLODivision::CLODivision(CLModelData* clmNewModel) : CLIArithmeticOperation(clmNewModel)
+CLODivision::CLODivision(std::shared_ptr<CLModelData> clmNewModel) : CLIArithmeticOperation(clmNewModel)
 {
     execute();
 }
