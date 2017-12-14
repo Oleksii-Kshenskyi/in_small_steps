@@ -8,7 +8,9 @@ SOURCES += main.cpp \
     model/cloperations.cpp \
     model/clmodeldata.cpp \
     model/clmodel.cpp \
-    clbuilder.cpp
+    clbuilder.cpp \
+    view/clview.cpp \
+    view/clviewmodel.cpp
 
 RESOURCES += qml.qrc
 
@@ -38,4 +40,7 @@ HEADERS += \
     clbuilder.h \
     model/clmodel.h \
     model/clmodeldata.h \
-    model/cloperations.h
+    model/cloperations.h \
+    model/clmodel.h \
+    view/clview.h \
+    view/clviewvodel.h

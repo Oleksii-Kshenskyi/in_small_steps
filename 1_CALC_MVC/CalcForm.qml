@@ -4,6 +4,7 @@ import QtQuick.Controls.Material 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.calendar 1.0
 import QtQuick.Controls.Styles 1.4
+import com.darkspectre.calculator 1.0
 
 Rectangle {
     id: frmMainForm
@@ -88,6 +89,10 @@ Rectangle {
                 text: qsTr("1")
                 font.pointSize: 24
                 highlighted: false
+                onClicked:
+                {
+                    ViewModel.displayValue += text;
+                }
 
             }
 
@@ -100,6 +105,10 @@ Rectangle {
                 text: qsTr("2")
                 highlighted: false
                 font.pointSize: 24
+                onClicked:
+                {
+                    ViewModel.displayValue += text;
+                }
             }
 
             Button {
@@ -110,6 +119,10 @@ Rectangle {
                 text: qsTr("3")
                 highlighted: false
                 font.pointSize: 24
+                onClicked:
+                {
+                    ViewModel.displayValue += text;
+                }
             }
           //}
             //Row {
@@ -122,6 +135,10 @@ Rectangle {
                 text: qsTr("4")
                 highlighted: false
                 font.pointSize: 24
+                onClicked:
+                {
+                    ViewModel.displayValue += text;
+                }
             }
 
             Button {
@@ -132,6 +149,10 @@ Rectangle {
                 text: qsTr("5")
                 highlighted: false
                 font.pointSize: 24
+                onClicked:
+                {
+                    ViewModel.displayValue += text;
+                }
             }
 
             Button {
@@ -142,6 +163,10 @@ Rectangle {
                 text: qsTr("6")
                 highlighted: false
                 font.pointSize: 24
+                onClicked:
+                {
+                    ViewModel.displayValue += text;
+                }
             }
             //}
             //Row {
@@ -154,6 +179,10 @@ Rectangle {
                 text: qsTr("7")
                 highlighted: false
                 font.pointSize: 24
+                onClicked:
+                {
+                    ViewModel.displayValue += text;
+                }
             }
 
             Button {
@@ -164,6 +193,10 @@ Rectangle {
                 text: qsTr("8")
                 highlighted: false
                 font.pointSize: 24
+                onClicked:
+                {
+                    ViewModel.displayValue += text;
+                }
             }
 
             Button {
@@ -174,6 +207,10 @@ Rectangle {
                 text: qsTr("9")
                 highlighted: false
                 font.pointSize: 24
+                onClicked:
+                {
+                    ViewModel.displayValue += text;
+                }
             }
             //}
             //Row {
@@ -187,6 +224,10 @@ Rectangle {
                 text: qsTr("0")
                 highlighted: false
                 font.pointSize: 24
+                onClicked:
+                {
+                    ViewModel.displayValue += text;
+                }
 
             }
 
