@@ -3,7 +3,7 @@
 
 CLViewModel::CLViewModel()
 {
-    qmlRegisterType<CLViewModel>("com.darkspectre.calculator", 1, 0, "ViewModel");
+    //qmlRegisterType<CLViewModel>("com.darkspectre.calculator", 1, 0, "ViewModel");
 }
 
 QString CLViewModel::getDisplayValue()
@@ -14,4 +14,5 @@ QString CLViewModel::getDisplayValue()
 void CLViewModel::setDisplayValue(QString newValue)
 {
     this->displayValue = newValue;
+    emit displayValueChanged(newValue);
 }

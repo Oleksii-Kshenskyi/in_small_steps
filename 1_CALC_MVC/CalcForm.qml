@@ -4,11 +4,18 @@ import QtQuick.Controls.Material 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.calendar 1.0
 import QtQuick.Controls.Styles 1.4
-import com.darkspectre.calculator 1.0
+//import com.darkspectre.calculator 1.0
 
 Rectangle {
     id: frmMainForm
     property alias btOFF: btOFF
+    signal displayTextChanged(string newText)
+
+    function setDisplayTextString(newText)
+    {
+        teMainNumericDisplay.text = newText;
+        displayTextChanged(newText);
+    }
 
 
     GridLayout {
@@ -91,7 +98,7 @@ Rectangle {
                 highlighted: false
                 onClicked:
                 {
-                    ViewModel.displayValue += text;
+                    ViewModel.setDisplayValue(ViewModel.getDisplayValue() + text);
                 }
 
             }

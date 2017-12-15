@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/">
+    <qresource prefix="/calcui">
         <file>main.qml</file>
         <file>CalcForm.qml</file>
         <file>qtquickcontrols2.conf</file>

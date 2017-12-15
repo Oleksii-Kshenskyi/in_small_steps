@@ -10,10 +10,10 @@ class CLViewModel: public QObject
     Q_PROPERTY(QString displayValue READ getDisplayValue WRITE setDisplayValue NOTIFY displayValueChanged)
   public:
     CLViewModel();
-    QString getDisplayValue();
-    void setDisplayValue(QString newValue);
+    Q_INVOKABLE QString getDisplayValue();
+    Q_INVOKABLE void setDisplayValue(QString newValue);
   signals:
-    displayValueChanged();
+    displayValueChanged(QString newValue);
   private:
     QString displayValue;
 };

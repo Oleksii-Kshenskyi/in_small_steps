@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include "view/clviewvodel.h"
+#include "view/clqmlconnector.h"
 #include <memory>
 
 class CLView : public QObject
@@ -10,8 +11,10 @@ class CLView : public QObject
     Q_OBJECT
 public:
     CLView();
+    void setDisplayText(QString newValue);
 private:
     std::shared_ptr<CLViewModel> model;
+    std::unique_ptr<CLQmlConnector> qmlConnector;
 
 signals:
 

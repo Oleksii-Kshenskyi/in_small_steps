@@ -10,7 +10,8 @@ SOURCES += main.cpp \
     model/clmodel.cpp \
     clbuilder.cpp \
     view/clview.cpp \
-    view/clviewmodel.cpp
+    view/clviewmodel.cpp \
+    view/clqmlconnector.cpp
 
 RESOURCES += qml.qrc
 
@@ -43,4 +44,5 @@ HEADERS += \
     model/cloperations.h \
     model/clmodel.h \
     view/clview.h \
-    view/clviewvodel.h
+    view/clviewvodel.h \
+    view/clqmlconnector.h
