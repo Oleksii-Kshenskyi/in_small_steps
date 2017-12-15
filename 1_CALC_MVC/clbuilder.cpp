@@ -1,5 +1,10 @@
 #include "clbuilder.h"
 
+CLTestBuilder::CLTestBuilder()
+{
+    ui = std::make_shared<CLView>();
+}
+
 QString CLTestBuilder::testAddition()
 {
     CLModel clmTestModel(std::make_shared<CLOAddition>(std::make_shared<CLModelData>(35,44)));
