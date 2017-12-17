@@ -17,7 +17,7 @@ class CLTestBuilder: public QObject
 {
     Q_OBJECT
   public:
-    CLTestBuilder();
+    CLTestBuilder(QObject* root, std::shared_ptr<QQmlApplicationEngine> engine);
 
     Q_INVOKABLE QString testAddition();
     Q_INVOKABLE QString testSubstraction();

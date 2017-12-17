@@ -8,14 +8,14 @@
 #include <memory>
 
 
-class CLQmlConnector
+class CLQmlConnector: public QObject
 {
 public:
-    CLQmlConnector();
+    CLQmlConnector(QObject* root, std::shared_ptr<QQmlApplicationEngine> engine);
     void setQmlMainDisplayText(QString newText);
     void setContextProperty(QString propertyName, QObject* propertyObject);
 private:
-    std::unique_ptr<QQmlApplicationEngine> engine;
+    std::shared_ptr<QQmlApplicationEngine> engine;
     std::unique_ptr<QQuickView> view;
     std::unique_ptr<QQmlComponent> component;
     std::unique_ptr<QObject> object;
