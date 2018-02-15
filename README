@@ -16,10 +16,10 @@ Calculator should contain a "Number" field, number buttons, a comma, equal sign,
 Nothing fancy is expected here. Do this in MVC, get SOLID where you can, and you're good to go.
 
 CURRENT LEARNING PLAN:
-- Trying to commit everyday [doesn't matter how small the commit is]  <== I'm here currently
+- Try to commit every day [doesn't matter how small the commit is]  <== I'm here currently
 - First, finish the MVC Calculator app;
-- Second, do one app in several languages: C++, C#, Java, Python, Ruby. Actual purpose and contents of the app TBD.
-- Third, do a small game (most probably an Arkanoid clone or a fifteen game) in C#/Unity.
+- Second, create one app in several languages: C++, C#, Java, Python, Ruby. Actual purpose and contents of the app TBD.
+- Third, create a small game (most probably an Arkanoid clone or a fifteen game) in C#/Unity.
 - Then, try to do the same with some other language/framework/whatever (Unreal Engine 4?).
 - Start a big project (most probably either a roguelite or the file manager).
 
