@@ -13,6 +13,11 @@ Rectangle {
     property alias mainDisplayText: teMainNumericDisplay.text
     signal displayTextChanged(string newText)
 
+    onDisplayTextChanged:
+    {
+        teMainNumericDisplay.displayChanges(newText);
+    }
+
     function setDisplayTextString(newText)
     {
         frmMainForm.mainDisplayText = newText;
@@ -37,6 +42,11 @@ Rectangle {
             font.pointSize: 28
             horizontalAlignment: Text.AlignRight
 
+            function displayChanges(newText)
+            {
+                text = ViewModel.getDisplayValue() + newText;
+                ViewModel.setDisplayValue(text);
+            }
         }
 
         Button {
@@ -76,18 +86,6 @@ Rectangle {
             onClicked: Qt.quit()
         }
 
-        //Column {
-          //  id: grButtonsGrid
-            /*columnSpacing: 5
-            rowSpacing: 5
-            columns: 3*/
-
-            //width: parent.width
-
-
-            //Row {
-              //  width: parent.width
-
             Button {
                 id: btNumericOne
                 y: 0
@@ -99,7 +97,7 @@ Rectangle {
                 highlighted: false
                 onClicked:
                 {
-                    ViewModel.setDisplayValue(ViewModel.getDisplayValue() + text);
+                    displayTextChanged(text);
                 }
 
             }
@@ -115,7 +113,7 @@ Rectangle {
                 font.pointSize: 24
                 onClicked:
                 {
-                    ViewModel.displayValue += text;
+                    displayTextChanged(text);
                 }
             }
 
@@ -129,7 +127,7 @@ Rectangle {
                 font.pointSize: 24
                 onClicked:
                 {
-                    ViewModel.displayValue += text;
+                    displayTextChanged(text);
                 }
             }
           //}
@@ -145,7 +143,7 @@ Rectangle {
                 font.pointSize: 24
                 onClicked:
                 {
-                    ViewModel.displayValue += text;
+                    displayTextChanged(text)
                 }
             }
 
@@ -159,7 +157,7 @@ Rectangle {
                 font.pointSize: 24
                 onClicked:
                 {
-                    ViewModel.displayValue += text;
+                    displayTextChanged(text);
                 }
             }
 
@@ -173,12 +171,9 @@ Rectangle {
                 font.pointSize: 24
                 onClicked:
                 {
-                    ViewModel.displayValue += text;
+                    displayTextChanged(text);
                 }
             }
-            //}
-            //Row {
-             //   width: parent.width
             Button {
                 id: btNumericSeven
                 width: height
@@ -189,7 +184,7 @@ Rectangle {
                 font.pointSize: 24
                 onClicked:
                 {
-                    ViewModel.displayValue += text;
+                    displayTextChanged(text);
                 }
             }
 
@@ -203,7 +198,7 @@ Rectangle {
                 font.pointSize: 24
                 onClicked:
                 {
-                    ViewModel.displayValue += text;
+                    displayTextChanged(text);
                 }
             }
 
@@ -217,12 +212,9 @@ Rectangle {
                 font.pointSize: 24
                 onClicked:
                 {
-                    ViewModel.displayValue += text;
+                    displayTextChanged(text);
                 }
             }
-            //}
-            //Row {
-             //   width: parent.width
             Button {
                 id: btNumericZero
                 width: height
@@ -234,7 +226,7 @@ Rectangle {
                 font.pointSize: 24
                 onClicked:
                 {
-                    ViewModel.displayValue += text;
+                    displayTextChanged(text);
                 }
 
             }

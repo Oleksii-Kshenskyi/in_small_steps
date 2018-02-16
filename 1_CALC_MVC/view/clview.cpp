@@ -12,4 +12,5 @@ CLView::CLView(QObject *root, std::shared_ptr<QQmlApplicationEngine> engine): QO
 void CLView::setDisplayText(QString newValue)
 {
     this->qmlConnector->setQmlMainDisplayText(newValue);
+
 }

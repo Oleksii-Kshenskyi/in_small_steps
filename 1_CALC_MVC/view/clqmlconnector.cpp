@@ -14,11 +14,7 @@ CLQmlConnector::CLQmlConnector(QObject *root, std::shared_ptr<QQmlApplicationEng
 
 void CLQmlConnector::setQmlMainDisplayText(QString newText)
 {
-    qDebug() << "newText" << newText;
-    //QMetaObject::invokeMethod(this->object.get(), "setDisplayTextString", Q_ARG(QVariant, QVariant(newText)));
-    //this->object->setProperty("mainDisplayText", newText);
-    QQmlProperty::write(this->object.get(), "mainDisplayText", newText);
-    qDebug() << "Prop:" << QQmlProperty::read(this->object.get(), "mainDisplayText").toString();
+    this->object->setProperty("mainDisplayText", newText);
 }
 
 void CLQmlConnector::setContextProperty(QString propertyName, QObject* propertyObject)
