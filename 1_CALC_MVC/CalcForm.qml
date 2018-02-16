@@ -4,24 +4,15 @@ import QtQuick.Controls.Material 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.calendar 1.0
 import QtQuick.Controls.Styles 1.4
-//import com.darkspectre.calculator 1.0
 
 
 Rectangle {
     id: frmMainForm
-    property alias btOFF: btOFF
-    property alias mainDisplayText: teMainNumericDisplay.text
     signal displayTextChanged(string newText)
 
     onDisplayTextChanged:
     {
         teMainNumericDisplay.displayChanges(newText);
-    }
-
-    function setDisplayTextString(newText)
-    {
-        frmMainForm.mainDisplayText = newText;
-        displayTextChanged(newText);
     }
 
     GridLayout {
@@ -35,7 +26,6 @@ Rectangle {
             Layout.row: 0
             Layout.column: 0
             readOnly: true
-            //height: 60
             text: "0"
 
             Layout.columnSpan: 4
@@ -130,9 +120,7 @@ Rectangle {
                     displayTextChanged(text);
                 }
             }
-          //}
-            //Row {
-              //  width: parent.width
+
             Button {
                 id: btNumericFour
                 width: height
@@ -265,12 +253,6 @@ Rectangle {
                 highlighted: false
                 font.pointSize: 24
 
-                onClicked: {
-
-                    teMainNumericDisplay.text = testCalculator.testAddition()
-
-                }
-
             }
 
             Button {
@@ -282,12 +264,6 @@ Rectangle {
                 text: qsTr("-")
                 highlighted: false
                 font.pointSize: 24
-
-                onClicked: {
-
-                    teMainNumericDisplay.text = testCalculator.testSubstraction()
-
-                }
 
             }
 
@@ -301,12 +277,6 @@ Rectangle {
                 highlighted: false
                 font.pointSize: 24
 
-                onClicked: {
-
-                    teMainNumericDisplay.text = testCalculator.testMultiplication()
-
-                }
-
             }
 
             Button {
@@ -318,15 +288,8 @@ Rectangle {
                 text: qsTr("/")
                 highlighted: false
                 font.pointSize: 24
-                onClicked: {
-
-                    teMainNumericDisplay.text = testCalculator.testDivision()
-
-                }
 
             }
-        //}
-
 
     }
 }

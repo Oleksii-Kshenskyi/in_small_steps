@@ -11,8 +11,6 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty())
         return -1;
     engine.rootContext()->setContextProperty("testCalculator", &clbBuilder);
-    //engine.load(QUrl(QLatin1String("qrc:/calcui/CalcForm.qml")));
-    //engine.rootContext()->setContextProperty("ViewModel", clbBuilder.getView()->getModel().get());
-    clbBuilder.testSetOperationInModel();
+
     return app.exec();
 }

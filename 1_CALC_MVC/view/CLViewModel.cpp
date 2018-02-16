@@ -3,7 +3,7 @@
 
 CLViewModel::CLViewModel(QObject *root): QObject(root), displayValue("0")
 {
-    //qmlRegisterType<CLViewModel>("com.darkspectre.calculator", 1, 0, "ViewModel");
+
 }
 
 QString CLViewModel::getDisplayValue()
