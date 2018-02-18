@@ -14,6 +14,9 @@ A calculator based on Model-View-Controller pattern.
 The goal here is not to create a calculator per se, but to undestand the basics of MVC and SOLID.
 Calculator should contain a "Number" field, number buttons, a comma, equal sign, reset buttons, and the basic arithmetic operations (+,-,*,/).
 Nothing fancy is expected here. Do this in MVC, get SOLID where you can, and you're good to go.
+NOTE TO SELF [TO REMOVE AFTER RESOLVED]: 
+1. Pure virtual method called error because of the qmlConnector;
+2. Without qmlConnector (at all), app crashes. Investigate why and maybe you'll find the problem behind the bug.
 
 CURRENT LEARNING PLAN:
 - Try to commit every day [doesn't matter how small the commit is]  <== I'm here currently
