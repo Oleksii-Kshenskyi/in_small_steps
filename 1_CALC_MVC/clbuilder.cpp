@@ -4,33 +4,3 @@ CLTestBuilder::CLTestBuilder(QObject *root, std::shared_ptr<QQmlApplicationEngin
 {
     ui = std::make_shared<CLView>(root, engine);
 }
-
-QString CLTestBuilder::testAddition()
-{
-    CLModel clmTestModel(std::make_shared<CLOAddition>(std::make_shared<CLModelData>(35,44)));
-    return QString().number(clmTestModel.getResult());
-}
-
-QString CLTestBuilder::testSubstraction()
-{
-    CLModel clmTestModel(std::make_shared<CLOSubstraction>(std::make_shared<CLModelData>(35,44)));
-    return QString().number(clmTestModel.getResult());
-}
-
-QString CLTestBuilder::testMultiplication()
-{
-    CLModel clmTestModel(std::make_shared<CLOMultiplication>(std::make_shared<CLModelData>(35,44)));
-    return QString().number(clmTestModel.getResult());
-}
-
-QString CLTestBuilder::testDivision()
-{
-    CLModel clmTestModel(std::make_shared<CLODivision>(std::make_shared<CLModelData>(35,44)));
-    return QString().number(clmTestModel.getResult());
-}
-
-void CLTestBuilder::testSetOperationInModel()
-{
-    CLModel clmTestModel(std::make_shared<CLOSubstraction>(std::make_shared<CLModelData>(35,44)));
-    clmTestModel.setOperation(std::make_shared<CLOAddition>(std::make_shared<CLModelData>(35,44)));
-}
