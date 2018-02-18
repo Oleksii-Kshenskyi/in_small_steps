@@ -6,11 +6,6 @@ CLIArithmeticOperation::CLIArithmeticOperation(std::shared_ptr<CLModelData> clmN
 
 }
 
-CLIArithmeticOperation::~CLIArithmeticOperation()
-{
-
-}
-
 qreal CLIArithmeticOperation::getResult()
 {
     return clmCurrentModel->getResult();

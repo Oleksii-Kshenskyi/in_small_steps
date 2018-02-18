@@ -8,7 +8,7 @@ class CLIArithmeticOperation
 {
   public:
     CLIArithmeticOperation(std::shared_ptr<CLModelData> clmNewModel);
-    virtual ~CLIArithmeticOperation();
+    virtual ~CLIArithmeticOperation() = default;
     virtual void execute() = 0;
     qreal getResult();
   protected:
@@ -19,28 +19,28 @@ class CLOAddition: public CLIArithmeticOperation
 {
   public:
     CLOAddition(std::shared_ptr<CLModelData> clmNewModel);
-    void execute();
+    virtual void execute() override;
 };
 
 class CLOSubstraction: public CLIArithmeticOperation
 {
   public:
     CLOSubstraction(std::shared_ptr<CLModelData> clmNewModel);
-    void execute();
+    virtual void execute() override;
 };
 
 class CLOMultiplication: public CLIArithmeticOperation
 {
   public:
     CLOMultiplication(std::shared_ptr<CLModelData> clmNewModel);
-    void execute();
+    virtual void execute() override;
 };
 
 class CLODivision: public CLIArithmeticOperation
 {
   public:
     CLODivision(std::shared_ptr<CLModelData> clmNewModel);
-    void execute();
+    virtual void execute() override;
 };
 
 #endif // CLOPERATIONS_H
