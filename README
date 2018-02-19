@@ -19,8 +19,8 @@ NOTE TO SELF [TO REMOVE AFTER RESOLVED]:
 2. Without qmlConnector (at all), app crashes. Investigate why and maybe you'll find the problem behind the bug.
 
 CURRENT LEARNING PLAN:
-- Try to commit every day [doesn't matter how small the commit is]  <== I'm here currently
-- First, finish the MVC Calculator app;
+- Try to commit every day [doesn't matter how small the commit is]
+- First, finish the MVC Calculator app; <== I'm here currently
 - Second, create one app in several languages: C++, C#, Java, Python, Ruby. Actual purpose and contents of the app TBD.
   IMPORTANT NOTE: the app should have one different module in each language.
 - Third, create a small game (most probably an Arkanoid clone or a fifteen game) in C#/Unity.
