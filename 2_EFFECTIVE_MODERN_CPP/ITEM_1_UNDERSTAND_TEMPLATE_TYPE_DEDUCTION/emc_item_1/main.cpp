@@ -74,6 +74,38 @@ void testArrayPointers()
 }
 //Testing array pointers - FINISH
 
+//Testing type deduction of pointers - START
+template <typename T>
+void templatePointer(T* arg)
+{
+	std::cout << "If the type was with no modifiers, then it's a simple non-const pointer: " << arg << std::endl;
+	std::cout << "The pointer itself can be changed: " << ++arg << std::endl; arg--;
+	std::cout << "The pointer's pointed value (" << (*arg)++ << ") can also be changed: " << *arg << std::endl;
+}
+
+template <typename T>
+void templatePointerConst(T* arg)
+{
+	std::cout << "However, if the expression type is already const type*, you get a const pointer: " << arg << std::endl;
+	std::cout << "It means the pointer itself can change: " << ++arg << std::endl; arg--;
+	std::cout << "But if you try to change the value pointed at, compilation will fail, because the value is const." << std::endl;
+	(*arg)++;
+
+}
+
+void testPointers()
+{
+	std::cout << "=== 3: TEST PTRS:====" << std::endl;
+
+	int val = 30;
+	std::cout << "val is " << val << " after init." << std::endl;
+	const int* pval = &val;
+	templatePointer(&val);
+	templatePointerConst(pval);
+}
+
+//Testing type deduction of pointers - FINISH
+
 int main(int argc, int* argv)
 {
 	testArrayRefs();
@@ -81,6 +113,10 @@ int main(int argc, int* argv)
 	std::cout << std::endl;
 
 	testArrayPointers();
+
+	std::cout << std::endl;
+
+	testPointers();
 
 	std::cout << std::endl;
 
