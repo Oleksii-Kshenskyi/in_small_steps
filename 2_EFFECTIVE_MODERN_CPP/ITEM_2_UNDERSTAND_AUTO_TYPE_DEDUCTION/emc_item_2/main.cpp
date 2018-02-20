@@ -11,7 +11,7 @@ void testAutoIdenticalToTemplateDeduction()
 	auto autoval1{ x };
 	const auto autoval2{ x };
 	const auto& autoval3{ x };
-	std::cout << "autoval 1 (auto autoval1{ x }) is T, and x is int. It means autoval1 is also int and can be changed: " << ++autoval1 << std::endl; 
+	std::cout << "autoval 1 (auto autoval1{ x }) is T, and x is int. It means autoval1 is also int(" << autoval1++ << ") and can be changed: " << autoval1 << std::endl; 
 	std::cout << "But as this is a pass-by-value, the original x is unchanged (we changed a copy on previous line): " << x << std::endl;
 	std::cout << "autoval 2 (const auto autoval2{ x }) is const T, and x is int. It means autoval2 is const int: " << autoval2 << std::endl;
 	std::cout << "it also means autoval2 can't be cahnged, and if you attempt to do that, compilation is going to fail." << std::endl;
@@ -40,9 +40,24 @@ void testAutoIdenticalToTemplateDeduction()
 
 }
 
+void testAutoExceptions()
+{
+	int a{ 27 };
+	auto autoval1{ a };
+	auto autoval2 = { a };
+	std::cout << "We also have a few exceptions. For example, declaring an autoval as auto autoval1{ a } where a is int will yield a simple int, true: " << autoval1 << std::endl;
+
+	std::cout << "However, declaring it as auto autoval2 = {a} will not yield int, it will be std::initalizer_list<int> with one int instead. " << std::endl;
+    std::cout << "We can call autoval2.size() to check this: " << autoval2.size() << std::endl;
+}
+
 int main(int argc, int* argv)
 {
 	testAutoIdenticalToTemplateDeduction();
+
+	std::cout << std::endl;
+
+	testAutoExceptions();
 
 	std::cin.get();
 	return 0;
