@@ -9,6 +9,13 @@ import QtQuick.Controls.Styles 1.4
 Rectangle {
     id: frmMainForm
     signal displayTextChanged(string newText)
+    property alias mainDisplayText: teMainNumericDisplay.text
+
+    function refreshDisplay()
+    {
+        teMainNumericDisplay.refreshDisplay();
+        btCancelAll.text = "KE";
+    }
 
     onDisplayTextChanged:
     {
@@ -31,6 +38,11 @@ Rectangle {
             Layout.columnSpan: 4
             font.pointSize: 28
             horizontalAlignment: Text.AlignRight
+
+            function refreshDisplay()
+            {
+                text = text;
+            }
 
             function displayChanges(newText)
             {
@@ -228,6 +240,11 @@ Rectangle {
                 text: qsTr(".")
                 highlighted: false
                 font.pointSize: 24
+
+                onClicked:
+                {
+                    View.setQmlText("000");
+                }
 
             }
 

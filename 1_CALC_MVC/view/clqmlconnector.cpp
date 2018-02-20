@@ -15,6 +15,8 @@ CLQmlConnector::CLQmlConnector(QObject *root, std::shared_ptr<QQmlApplicationEng
 void CLQmlConnector::setQmlMainDisplayText(QString newText)
 {
     this->object->setProperty("mainDisplayText", newText);
+    qDebug() << "prop:" << QQmlProperty::read(this->object.get(), "mainDisplayText").toString();
+    QMetaObject::invokeMethod(this->object.get(), "refreshDisplay", Qt::DirectConnection);
 }
 
 void CLQmlConnector::setContextProperty(QString propertyName, QObject* propertyObject)

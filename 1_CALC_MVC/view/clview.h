@@ -11,6 +11,7 @@ class CLView : public QObject
     Q_OBJECT
 public:
     CLView(QObject* root, std::shared_ptr<QQmlApplicationEngine>);
+    Q_INVOKABLE void setQmlText(const QString& newText);
 private:
     std::shared_ptr<CLViewModel> model;
     std::unique_ptr<CLQmlConnector> qmlConnector;

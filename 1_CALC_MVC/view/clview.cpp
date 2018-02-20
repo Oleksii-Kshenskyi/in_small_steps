@@ -6,4 +6,11 @@ CLView::CLView(QObject *root, std::shared_ptr<QQmlApplicationEngine> engine): QO
    this->model = std::make_shared<CLViewModel>(root);
    this->qmlConnector = std::make_unique<CLQmlConnector>(root, engine);
    this->qmlConnector->setContextProperty("ViewModel", this->model.get());
+
+   engine->rootContext()->setContextProperty("View", this);
+}
+
+void CLView::setQmlText(const QString& newText)
+{
+    this->qmlConnector->setQmlMainDisplayText(newText);
 }
