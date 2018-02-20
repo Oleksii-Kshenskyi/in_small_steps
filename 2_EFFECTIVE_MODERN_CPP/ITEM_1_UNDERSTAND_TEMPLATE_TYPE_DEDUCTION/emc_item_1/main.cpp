@@ -89,8 +89,7 @@ void templatePointerConst(T* arg)
 	std::cout << "However, if the expression type is already const type*, you get a const pointer: " << arg << std::endl;
 	std::cout << "It means the pointer itself can change: " << ++arg << std::endl; arg--;
 	std::cout << "But if you try to change the value pointed at, compilation will fail, because the value is const." << std::endl;
-	(*arg)++;
-
+	//(*arg)++; this fails, because the value pointed at is const.
 }
 
 void testPointers()
