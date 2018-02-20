@@ -185,7 +185,7 @@ void testUniRvalue(T&& arg)
 
 void testUniversalReferences()
 {
-	std::cout << "=== 4: TEST UNIVERSAL REFS:====" << std::endl;
+	std::cout << "=== 5: TEST UNIVERSAL REFS:====" << std::endl;
 
 	int val = 20;
 	const int cval = 20;
@@ -201,6 +201,51 @@ void testUniversalReferences()
 }
 
 //Testing type deduction of universal references - FINISH
+
+//Testing type deduction for pass-by-value cases - START
+template<typename T> 
+void templatePassByValue(T arg)
+{
+	std::cout << "No matter what you pass, if the template argument is pass-by-value, it will always be a simple modifiable copy: " << arg << std::endl;
+	std::cout << "It means the value can be changed: " << ++arg << std::endl;
+}
+
+template <typename T>
+void templatePassByValueConstStr(T arg)
+{
+	std::cout << "However, if you pass a const pointer to const string (const char* const), you get a const char*: " << arg << std::endl;
+	std::cout << "It means that the pointer can be changed inside templated function: " << ++arg << std::endl;
+	std::cout << "But it means that you can't change the value itself, because you'll get a compilation error." << std::endl;
+	//(*arg)++ //this fails, because type is const char* and the value itself is constant and can't be changed.
+	std::cout << "This happens because the variable that is passed by value is a pointer." << std::endl;
+	std::cout << "By the rules of pass-by-value type deduction, all modifiers for that variable (pointer) are ignored." << std::endl;
+	std::cout << "But the modifiers for the value the pointer points at remain unchanged, because that's a different entity." << std::endl;
+}
+
+void testPassByValue()
+{
+	std::cout << "=== 6: TEST PASS BY VALUE:====" << std::endl;
+
+	int val = 20; 
+	const int cval = 20;
+	const int& rval = 20;
+
+	std::cout << "First pass with int: " << std::endl;
+	templatePassByValue(val);
+	std::cout << "And it also means that in the caller function the value will be unchanged (because you changed a copy, not the original): " << val << std::endl;
+
+	std::cout << "Second pass with const int: " << std::endl;
+	templatePassByValue(cval);
+	std::cout << "And it also means that in the caller function the value will be unchanged (because you changed a copy, not the original): " << cval << std::endl;
+
+	std::cout << "Third pass with const int&: " << std::endl;
+	templatePassByValue(rval);
+	std::cout << "And it also means that in the caller function the value will be unchanged (because you changed a copy, not the original): " << rval << std::endl;
+
+	const char* const str = "SomeString";
+	templatePassByValueConstStr(str);
+}
+//Testing type deduction for pass-by-value cases - FINISH
 
 int main(int argc, int* argv)
 {
@@ -223,6 +268,8 @@ int main(int argc, int* argv)
 	testUniversalReferences();
 
 	std::cout << std::endl;
+
+	testPassByValue();
 
 	std::cin.get();
 }
