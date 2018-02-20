@@ -159,6 +159,49 @@ void testReferences()
 }
 //Testing type deduction of references - FINISH
 
+//Testing type deduction of universal references - START
+template <typename T>
+void testNoModifiersUniLvalue(T&& arg)
+{
+	std::cout << "As long as universal reference is an lvalue, it will always be a reference: " << arg << std::endl;
+	std::cout << "If it didn't have modifiers in the expression passed into function, then it's a simple non-const reference." << std::endl;
+	std::cout << "Of course, it can be changed: " << ++arg << std::endl;
+}
+
+template<typename T>
+void testModifiersUniLvalue(T&& arg)
+{
+	std::cout << "If universal reference had modifier (like const) before being passed, it's a const int& in a T&& templated function: " << arg << std::endl;
+	std::cout << "Of course it can't be changed and attempting to do so will result compilation to fail." << std::endl;
+	//arg++; //this fails because arg is const T&
+}
+
+template <typename T>
+void testUniRvalue(T&& arg)
+{
+	std::cout << "If you pass an rvalue to T&& templated function, then argument is an rvalue reference: " << arg << std::endl;
+	std::cout << "It can of course be changed (because it's a reference), but it'll get destroyed after function finishes, because it's temporary:" << ++arg << std::endl;
+}
+
+void testUniversalReferences()
+{
+	std::cout << "=== 4: TEST UNIVERSAL REFS:====" << std::endl;
+
+	int val = 20;
+	const int cval = 20;
+	const int& rval = val;
+
+	testNoModifiersUniLvalue(val);
+	std::cout << "And of course, the value is changed in the caller function: " << val << std::endl;
+	std::cout << "testModifiersUniLvalue() first pass for const int: " << std::endl;
+	testModifiersUniLvalue(cval);
+	std::cout << "testModifiersUniLvalue() second pass for const int&: " << std::endl;
+	testModifiersUniLvalue(rval);
+	testUniRvalue(36);
+}
+
+//Testing type deduction of universal references - FINISH
+
 int main(int argc, int* argv)
 {
 	testArrayRefs();
@@ -174,6 +217,10 @@ int main(int argc, int* argv)
 	std::cout << std::endl;
 
 	testReferences();
+
+	std::cout << std::endl;
+
+	testUniversalReferences();
 
 	std::cout << std::endl;
 
