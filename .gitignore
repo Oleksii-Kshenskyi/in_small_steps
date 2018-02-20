@@ -73,3 +73,6 @@ Thumbs.db
 
 *.stash
 build
+Debug
+Release
+.vs
