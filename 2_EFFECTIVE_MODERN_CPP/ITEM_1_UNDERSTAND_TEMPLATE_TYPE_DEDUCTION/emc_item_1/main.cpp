@@ -105,6 +105,60 @@ void testPointers()
 
 //Testing type deduction of pointers - FINISH
 
+//Testing type deduction of references - START
+template<typename T>
+void testNoModifiersType(T& arg)
+{
+	std::cout << "If your type has no modifiers, passing it into templated function as T& will get you a type&: " << arg++ << std::endl;
+	std::cout << "Changed variable inside the changing function looks like: " << arg << std::endl;
+}
+
+template<typename T>
+void testConstModifierType(T& arg)
+{
+	std::cout << "If you pass a const type into T& templated function, you get a const T&: " << arg << std::endl;
+	std::cout << "You obviously can't change it, and the compilation fails if you try to." << std::endl;
+	//arg++; //this fails because the variable is const int&
+}
+
+template<typename T>
+void testConstRefModifierType(T& arg)
+{
+	std::cout << "If you pass a const type& into T& templated function, you get a const T& again: " << arg << std::endl;
+	std::cout << "You obviously can't change it, and the compilation fails if you try to." << std::endl;
+	//arg++; //this fails because the variable is const int&
+}
+
+template<typename T>
+void testConstRefTemplate(const T& arg)
+{
+	std::cout << "If you pass anything (T, T&, const T&) into const T& templated function, you always get a const T&: " << arg << std::endl;
+	std::cout << "You obviously can't change it, and the compilation fails if you try to." << std::endl;
+	//arg++; //this fails because arg is always const int&
+}
+
+void testReferences()
+{
+	std::cout << "=== 4: TEST REFS:====" << std::endl;
+
+	int val = 20;
+	const int cval = 20;
+	const int& rval = val;
+
+	testNoModifiersType(val);
+	std::cout << "However, a changed variable inside the caller function is still changed: " << val << std::endl;
+	std::cout << "This proves that the variable is passed by reference." << std::endl;
+	testConstModifierType(cval);
+	testConstRefModifierType(rval);
+	std::cout << "First pass with int: " << std::endl;
+	testConstRefTemplate(val);
+	std::cout << "Second pass with int&: " << std::endl;
+	testConstRefTemplate(cval);
+	std::cout << "Third pass with const int&: " << std::endl;
+	testConstRefTemplate(rval);
+}
+//Testing type deduction of references - FINISH
+
 int main(int argc, int* argv)
 {
 	testArrayRefs();
@@ -116,6 +170,10 @@ int main(int argc, int* argv)
 	std::cout << std::endl;
 
 	testPointers();
+
+	std::cout << std::endl;
+
+	testReferences();
 
 	std::cout << std::endl;
 
