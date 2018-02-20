@@ -1,6 +1,7 @@
 #include <iostream>
 #include <array>
 
+//Testing array references - START
 template<typename T, int Size>
 constexpr std::size_t getArraySize(const T(&)[Size]) noexcept
 {
@@ -10,7 +11,7 @@ constexpr std::size_t getArraySize(const T(&)[Size]) noexcept
 
 void getArrayType()
 {
-	std::cout << "=== 1: GET ARRAY TYPE:====" << std::endl;
+	std::cout << "=== 1: GET ARRAY TYPE [ARRAY REF]:====" << std::endl;
 	int myArr[] = { 2, 3, 8, 12 };
 	std::cout << "size of arbitrary int array (myArr) is: " << getArraySize(myArr) << std::endl;
 
@@ -20,10 +21,13 @@ void getArrayType()
 	std::array<int, getArraySize(myArr)> stdArr;
 	std::cout << "size of std::array is: " << stdArr.size() << std::endl;
 }
+//Testing array references - FINISH
 
 int main(int argc, int* argv)
 {
 	getArrayType();
+
+	std::cout << std::endl;
 
 	std::cin.get();
 }
