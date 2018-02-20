@@ -14,9 +14,22 @@ A calculator based on Model-View-Controller pattern.
 The goal here is not to create a calculator per se, but to undestand the basics of MVC and SOLID.
 Calculator should contain a "Number" field, number buttons, a comma, equal sign, reset buttons, and the basic arithmetic operations (+,-,*,/).
 Nothing fancy is expected here. Do this in MVC, get SOLID where you can, and you're good to go.
+When the change to calculator is done, increment the 3rd number. When some part is done, increment 2nd number. When the whole project is done,
+increment 1st number.
 NOTE TO SELF [TO REMOVE AFTER RESOLVED]: 
-1. Pure virtual method called error because of the qmlConnector;
-2. Without qmlConnector (at all), app crashes. Investigate why and maybe you'll find the problem behind the bug.
+1. Needs investigation as to how to refactor it the best way. 
+   - QML files contain logic. No good;
+   - Decide on where to bind C++/QML. Currently ViewModel is called directly. Maybe better to move it into view? The problem is, model's property
+     can't be moved because it's its sole reason for existing.
+   - CLQMLConnector has the unused method, setQMLMainText(). This method should change QML text directly. Thing is, QML doesn't want to refresh
+     GUI if called from C++. Think what can be done about it.
+   - Think about the way to remove 10 repeated blocks for buttons in QML. Maybe use the Repeater QML type somehow?
+
+2 - Effective Modern Cpp
+This is a project created for the purpose of learning stuff from said book. Try to create a small program for each item to use it the way the book
+wants you to, and to train the principle through practice.
+Each item contains its own folder with a small project inside. When the project is updated, increment 3rd number. When the item is done, increment 
+2nd number. When the whole book is done, increment 1st number.
 
 CURRENT LEARNING PLAN:
 - Try to commit every day [doesn't matter how small the commit is]
@@ -26,5 +39,8 @@ CURRENT LEARNING PLAN:
 - Third, create a small game (most probably an Arkanoid clone or a fifteen game) in C#/Unity.
 - Then, try to do the same with some other language/framework/whatever (Unreal Engine 4?).
 - Start a big project (most probably either a roguelite or the file manager).
+
+SEPARATE PLAN:
+- Until new job is found, studying for 6h every day. Currently it involves learning the Effective Modern C++ book.
 
 by Oleksii <DarkSpectre> Kshenskyi.
