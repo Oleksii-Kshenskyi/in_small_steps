@@ -8,19 +8,6 @@ import QtQuick.Controls.Styles 1.4
 
 Rectangle {
     id: frmMainForm
-    signal displayTextChanged(string newText)
-    property alias mainDisplayText: teMainNumericDisplay.text
-
-    function refreshDisplay()
-    {
-        teMainNumericDisplay.refreshDisplay();
-        btCancelAll.text = "KE";
-    }
-
-    onDisplayTextChanged:
-    {
-        teMainNumericDisplay.displayChanges(newText);
-    }
 
     GridLayout {
         id: grid
@@ -39,16 +26,6 @@ Rectangle {
             font.pointSize: 28
             horizontalAlignment: Text.AlignRight
 
-            function refreshDisplay()
-            {
-                text = text;
-            }
-
-            function displayChanges(newText)
-            {
-                text = ViewModel.getDisplayValue() + newText;
-                ViewModel.setDisplayValue(text);
-            }
         }
 
         Button {
@@ -97,10 +74,6 @@ Rectangle {
                 text: qsTr("1")
                 font.pointSize: 24
                 highlighted: false
-                onClicked:
-                {
-                    displayTextChanged(text);
-                }
 
             }
 
@@ -113,10 +86,7 @@ Rectangle {
                 text: qsTr("2")
                 highlighted: false
                 font.pointSize: 24
-                onClicked:
-                {
-                    displayTextChanged(text);
-                }
+
             }
 
             Button {
@@ -127,10 +97,7 @@ Rectangle {
                 text: qsTr("3")
                 highlighted: false
                 font.pointSize: 24
-                onClicked:
-                {
-                    displayTextChanged(text);
-                }
+
             }
 
             Button {
@@ -141,10 +108,7 @@ Rectangle {
                 text: qsTr("4")
                 highlighted: false
                 font.pointSize: 24
-                onClicked:
-                {
-                    displayTextChanged(text)
-                }
+
             }
 
             Button {
@@ -155,10 +119,7 @@ Rectangle {
                 text: qsTr("5")
                 highlighted: false
                 font.pointSize: 24
-                onClicked:
-                {
-                    displayTextChanged(text);
-                }
+
             }
 
             Button {
@@ -169,10 +130,7 @@ Rectangle {
                 text: qsTr("6")
                 highlighted: false
                 font.pointSize: 24
-                onClicked:
-                {
-                    displayTextChanged(text);
-                }
+
             }
             Button {
                 id: btNumericSeven
@@ -182,10 +140,7 @@ Rectangle {
                 text: qsTr("7")
                 highlighted: false
                 font.pointSize: 24
-                onClicked:
-                {
-                    displayTextChanged(text);
-                }
+
             }
 
             Button {
@@ -196,10 +151,7 @@ Rectangle {
                 text: qsTr("8")
                 highlighted: false
                 font.pointSize: 24
-                onClicked:
-                {
-                    displayTextChanged(text);
-                }
+
             }
 
             Button {
@@ -210,10 +162,7 @@ Rectangle {
                 text: qsTr("9")
                 highlighted: false
                 font.pointSize: 24
-                onClicked:
-                {
-                    displayTextChanged(text);
-                }
+
             }
             Button {
                 id: btNumericZero
@@ -224,10 +173,6 @@ Rectangle {
                 text: qsTr("0")
                 highlighted: false
                 font.pointSize: 24
-                onClicked:
-                {
-                    displayTextChanged(text);
-                }
 
             }
 
@@ -240,11 +185,6 @@ Rectangle {
                 text: qsTr(".")
                 highlighted: false
                 font.pointSize: 24
-
-                onClicked:
-                {
-                    View.setQmlText("000");
-                }
 
             }
 
