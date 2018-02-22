@@ -69,7 +69,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>H:\PROGRAMMING\PROJECTS\GIT_PROJECTS\in_small_steps\2_EFFECTIVE_MODERN_CPP\ITEM_4_KNOW_HOW_TO_VIEW_DEDUCED_TYPES\emc_item_4\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -112,6 +114,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="type_index\ctti_type_index.hpp" />
+    <ClInclude Include="type_index\detail\compile_time_type_info.hpp" />
+    <ClInclude Include="type_index\detail\ctti_register_class.hpp" />
+    <ClInclude Include="type_index\detail\stl_register_class.hpp" />
+    <ClInclude Include="type_index\runtime_cast.hpp" />
+    <ClInclude Include="type_index\runtime_cast\boost_shared_ptr_cast.hpp" />
+    <ClInclude Include="type_index\runtime_cast\detail\runtime_cast_impl.hpp" />
+    <ClInclude Include="type_index\runtime_cast\pointer_cast.hpp" />
+    <ClInclude Include="type_index\runtime_cast\reference_cast.hpp" />
+    <ClInclude Include="type_index\runtime_cast\register_runtime_class.hpp" />
+    <ClInclude Include="type_index\runtime_cast\std_shared_ptr_cast.hpp" />
+    <ClInclude Include="type_index\stl_type_index.hpp" />
+    <ClInclude Include="type_index\type_index_facade.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
