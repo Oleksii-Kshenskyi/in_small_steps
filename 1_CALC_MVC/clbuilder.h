@@ -17,7 +17,7 @@ class CLTestBuilder: public QObject
 {
     Q_OBJECT
   public:
-    CLTestBuilder(QObject* root, std::shared_ptr<QQmlApplicationEngine> engine);
+    CLTestBuilder(QObject* root, std::shared_ptr<QQmlEngine> engine);
 
   private:
     std::shared_ptr<CLView> ui;

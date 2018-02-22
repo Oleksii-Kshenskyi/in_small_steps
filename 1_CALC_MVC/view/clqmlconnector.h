@@ -1,7 +1,7 @@
 #ifndef CLQMLCONNECTOR_H
 #define CLQMLCONNECTOR_H
 
-#include <QQmlApplicationEngine>
+#include <QQmlEngine>
 #include <QQuickView>
 #include <QQmlComponent>
 #include <QQmlContext>
@@ -11,14 +11,12 @@
 class CLQmlConnector: public QObject
 {
 public:
-    CLQmlConnector(QObject* root, std::shared_ptr<QQmlApplicationEngine> engine);
+    CLQmlConnector(QObject* root, std::shared_ptr<QQmlEngine> engine);
     void setQmlMainDisplayText(QString newText);
-    void setContextProperty(QString propertyName, QObject* propertyObject);
 private:
-    std::shared_ptr<QQmlApplicationEngine> engine;
-    std::unique_ptr<QQuickView> view;
-    std::unique_ptr<QQmlComponent> component;
-    std::unique_ptr<QObject> object;
+    std::shared_ptr<QQmlEngine> engine;
+    std::shared_ptr<QQmlComponent> component;
+    std::shared_ptr<QObject> object;
     static const QUrl qmlUrl;
 };
 

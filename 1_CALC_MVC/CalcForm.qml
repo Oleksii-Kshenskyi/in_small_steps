@@ -1,13 +1,26 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.2
+import QtQuick.Window 2.3
 import QtQuick.Controls.Material 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.calendar 1.0
 import QtQuick.Controls.Styles 1.4
 
 
-Rectangle {
+ApplicationWindow {
     id: frmMainForm
+
+    visible: true
+    width: 450
+    height: 500
+    title: qsTr("MVC Calculator")
+    minimumHeight: height
+    minimumWidth: width
+    maximumHeight: height
+    maximumWidth: width
+
+    property alias mainDisplayText: teMainNumericDisplay.text
+    signal numberClicked(string number);
 
     GridLayout {
         id: grid
@@ -75,6 +88,11 @@ Rectangle {
                 font.pointSize: 24
                 highlighted: false
 
+                onClicked:
+                {
+                    numberClicked(text);
+                }
+
             }
 
             Button {
@@ -87,6 +105,11 @@ Rectangle {
                 highlighted: false
                 font.pointSize: 24
 
+                onClicked:
+                {
+                    numberClicked(text);
+                }
+
             }
 
             Button {
@@ -97,6 +120,11 @@ Rectangle {
                 text: qsTr("3")
                 highlighted: false
                 font.pointSize: 24
+
+                onClicked:
+                {
+                    numberClicked(text);
+                }
 
             }
 
@@ -109,6 +137,11 @@ Rectangle {
                 highlighted: false
                 font.pointSize: 24
 
+                onClicked:
+                {
+                    numberClicked(text);
+                }
+
             }
 
             Button {
@@ -119,6 +152,11 @@ Rectangle {
                 text: qsTr("5")
                 highlighted: false
                 font.pointSize: 24
+
+                onClicked:
+                {
+                    numberClicked(text);
+                }
 
             }
 
@@ -131,6 +169,11 @@ Rectangle {
                 highlighted: false
                 font.pointSize: 24
 
+                onClicked:
+                {
+                    numberClicked(text);
+                }
+
             }
             Button {
                 id: btNumericSeven
@@ -140,6 +183,11 @@ Rectangle {
                 text: qsTr("7")
                 highlighted: false
                 font.pointSize: 24
+
+                onClicked:
+                {
+                    numberClicked(text);
+                }
 
             }
 
@@ -152,6 +200,11 @@ Rectangle {
                 highlighted: false
                 font.pointSize: 24
 
+                onClicked:
+                {
+                    numberClicked(text);
+                }
+
             }
 
             Button {
@@ -163,6 +216,11 @@ Rectangle {
                 highlighted: false
                 font.pointSize: 24
 
+                onClicked:
+                {
+                    numberClicked(text);
+                }
+
             }
             Button {
                 id: btNumericZero
@@ -173,6 +231,11 @@ Rectangle {
                 text: qsTr("0")
                 highlighted: false
                 font.pointSize: 24
+
+                onClicked:
+                {
+                    numberClicked(text);
+                }
 
             }
 
