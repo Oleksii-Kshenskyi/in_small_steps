@@ -16,6 +16,7 @@ Item {
 
     property alias mainDisplayText: teMainNumericDisplay.text
     signal numberClicked(string number);
+    signal offClicked();
 
     function getDisplayText()
     {
@@ -85,7 +86,7 @@ Item {
             font.pointSize: 24
             highlighted: false
 
-            onClicked: Qt.quit()
+            onClicked: offClicked();
         }
 
             Button {

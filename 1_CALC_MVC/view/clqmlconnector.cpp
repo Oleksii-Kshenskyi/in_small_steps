@@ -1,5 +1,6 @@
 #include "clqmlconnector.h"
 #include <QQmlProperty>
+#include <QCoreApplication>
 
 const QUrl CLQmlConnector::qmlUrl = QUrl("qrc:/calcui/CalcForm.qml");
 
@@ -10,6 +11,7 @@ CLQmlConnector::CLQmlConnector(QObject *root, std::shared_ptr<QQuickView> mainVi
     this->object = (QObject*) mainView->rootObject();
 
     QObject::connect(this->object, SIGNAL(numberClicked(const QString&)), this, SIGNAL(changeModelTextForDelta(const QString&)));
+    QObject::connect(this->object, SIGNAL(offClicked()), qApp, SLOT(quit()));
 
 }
 
