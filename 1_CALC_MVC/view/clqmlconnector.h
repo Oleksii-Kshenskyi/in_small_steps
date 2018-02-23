@@ -13,6 +13,7 @@ class CLQmlConnector: public QObject
     Q_OBJECT
 public:
     CLQmlConnector(QObject* root, std::shared_ptr<QQuickView> mainView);
+    QString getQmlMainDisplayText();
 public slots:
     void setQmlMainDisplayText(const QString& newText);
 private:

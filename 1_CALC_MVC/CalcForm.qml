@@ -17,6 +17,16 @@ Item {
     property alias mainDisplayText: teMainNumericDisplay.text
     signal numberClicked(string number);
 
+    function getDisplayText()
+    {
+        return mainDisplayText;
+    }
+
+    function setDisplayText(newText)
+    {
+        teMainNumericDisplay.setText(newText);
+    }
+
     GridLayout {
         id: grid
         anchors.centerIn: parent
@@ -29,6 +39,11 @@ Item {
             Layout.column: 0
             readOnly: true
             text: "0"
+
+            function setText(newText)
+            {
+                text = newText;
+            }
 
             Layout.columnSpan: 4
             font.pointSize: 28

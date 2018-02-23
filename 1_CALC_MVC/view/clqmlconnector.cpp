@@ -15,5 +15,15 @@ CLQmlConnector::CLQmlConnector(QObject *root, std::shared_ptr<QQuickView> mainVi
 
 void CLQmlConnector::setQmlMainDisplayText(const QString& newText)
 {
-    qDebug() << "\nprop:" << QQmlProperty(this->object, "mainDisplayText").read().toString();
+    qDebug() << "Forwarding" << newText << "to QML...";
+    QMetaObject::invokeMethod(this->object, "setDisplayText", Q_ARG(QVariant, newText));
+
+}
+
+QString CLQmlConnector::getQmlMainDisplayText()
+{
+    QVariant displayText;
+    QMetaObject::invokeMethod(this->object, "getDisplayText", Q_RETURN_ARG(QVariant, displayText));
+
+    return displayText.toString();
 }
