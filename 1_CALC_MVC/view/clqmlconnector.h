@@ -10,13 +10,15 @@
 
 class CLQmlConnector: public QObject
 {
+    Q_OBJECT
 public:
-    CLQmlConnector(QObject* root, std::shared_ptr<QQmlEngine> engine);
-    void setQmlMainDisplayText(QString newText);
+    CLQmlConnector(QObject* root, std::shared_ptr<QQuickView> mainView);
+public slots:
+    void setQmlMainDisplayText(const QString& newText);
 private:
-    std::shared_ptr<QQmlEngine> engine;
+    std::shared_ptr<QQuickView> mainView;
     std::shared_ptr<QQmlComponent> component;
-    std::shared_ptr<QObject> object;
+    QObject* object;
     static const QUrl qmlUrl;
 };
 

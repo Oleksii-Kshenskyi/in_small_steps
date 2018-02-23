@@ -3,16 +3,17 @@
 
 const QUrl CLQmlConnector::qmlUrl = QUrl("qrc:/calcui/CalcForm.qml");
 
-CLQmlConnector::CLQmlConnector(QObject *root, std::shared_ptr<QQmlEngine> engine): QObject(root), engine(engine)
+CLQmlConnector::CLQmlConnector(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(root), mainView(mainView)
 {    
-    //this->engine->load(this->qmlUrl);
-    this->component = std::make_shared<QQmlComponent>(this->engine.get(), this->qmlUrl);
-    this->object = std::shared_ptr<QObject>(this->component->create());
+    mainView->setSource(qmlUrl);
+    mainView->show();
+    this->object = (QObject*) mainView->rootObject();
 
-    QObject::connect(this->object.get(), SIGNAL(numberClicked(QString)), this, SLOT(setQmlMainDisplayText(QString)));
+    QObject::connect(this->object, SIGNAL(numberClicked(const QString&)), this, SLOT(setQmlMainDisplayText(const QString&)));
+
 }
 
-void CLQmlConnector::setQmlMainDisplayText(QString newText)
+void CLQmlConnector::setQmlMainDisplayText(const QString& newText)
 {
-    qDebug() << "prop:" << QQmlProperty(this->object.get(), "mainDisplayText").read().toString();
+    qDebug() << "\nprop:" << QQmlProperty(this->object, "mainDisplayText").read().toString();
 }

@@ -1,6 +1,6 @@
 #include "clbuilder.h"
 
-CLTestBuilder::CLTestBuilder(QObject *root, std::shared_ptr<QQmlEngine> engine): QObject(root)
+CLTestBuilder::CLTestBuilder(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(root)
 {
-    ui = std::make_shared<CLView>(root, engine);
+    ui = std::make_shared<CLView>(root, mainView);
 }

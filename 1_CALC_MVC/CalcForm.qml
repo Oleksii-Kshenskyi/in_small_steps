@@ -7,17 +7,12 @@ import Qt.labs.calendar 1.0
 import QtQuick.Controls.Styles 1.4
 
 
-ApplicationWindow {
+Item {
     id: frmMainForm
 
     visible: true
     width: 450
     height: 500
-    title: qsTr("MVC Calculator")
-    minimumHeight: height
-    minimumWidth: width
-    maximumHeight: height
-    maximumWidth: width
 
     property alias mainDisplayText: teMainNumericDisplay.text
     signal numberClicked(string number);
