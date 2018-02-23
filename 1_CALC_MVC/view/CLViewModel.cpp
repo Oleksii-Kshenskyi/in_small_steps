@@ -1,5 +1,6 @@
 #include "view/clviewvodel.h"
 #include <QQmlEngine>
+#include <QDebug>
 
 CLViewModel::CLViewModel(QObject *root): QObject(root), displayValue("0")
 {

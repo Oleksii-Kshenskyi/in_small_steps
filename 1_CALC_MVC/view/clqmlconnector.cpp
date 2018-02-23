@@ -9,15 +9,13 @@ CLQmlConnector::CLQmlConnector(QObject *root, std::shared_ptr<QQuickView> mainVi
     mainView->show();
     this->object = (QObject*) mainView->rootObject();
 
-    QObject::connect(this->object, SIGNAL(numberClicked(const QString&)), this, SLOT(setQmlMainDisplayText(const QString&)));
+    QObject::connect(this->object, SIGNAL(numberClicked(const QString&)), this, SIGNAL(changeModelTextForDelta(const QString&)));
 
 }
 
 void CLQmlConnector::setQmlMainDisplayText(const QString& newText)
 {
-    qDebug() << "Forwarding" << newText << "to QML...";
     QMetaObject::invokeMethod(this->object, "setDisplayText", Q_ARG(QVariant, newText));
-
 }
 
 QString CLQmlConnector::getQmlMainDisplayText()

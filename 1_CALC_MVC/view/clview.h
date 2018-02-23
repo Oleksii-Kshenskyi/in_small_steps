@@ -11,14 +11,13 @@ class CLView : public QObject
     Q_OBJECT
 public:
     CLView(QObject* root, std::shared_ptr<QQuickView> mainView);
+public slots:
     Q_INVOKABLE void setQmlText(const QString& newText);
 private:
     std::shared_ptr<CLViewModel> model;
     std::unique_ptr<CLQmlConnector> qmlConnector;
-
-signals:
-
-public slots:
+private slots:
+    void changeModelTextForDelta(const QString& deltaText);
 };
 
 #endif // CLVIEW_H
