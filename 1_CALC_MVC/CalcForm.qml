@@ -11,7 +11,7 @@ Item {
     id: frmMainForm
 
     visible: true
-    width: 450
+    width: 470
     height: 500
 
     property alias mainDisplayText: teMainNumericDisplay.text
@@ -30,7 +30,11 @@ Item {
 
     GridLayout {
         id: grid
-        anchors.centerIn: parent
+        anchors.fill: parent
+        anchors.topMargin: 30
+        anchors.leftMargin: 30
+        anchors.bottomMargin: 30
+        anchors.rightMargin: 30
 
 
         TextField {
@@ -40,6 +44,7 @@ Item {
             Layout.column: 0
             readOnly: true
             text: "0"
+            maximumLength: 26
 
             function setText(newText)
             {
@@ -47,7 +52,7 @@ Item {
             }
 
             Layout.columnSpan: 4
-            font.pointSize: 28
+            font.pointSize: 20
             horizontalAlignment: Text.AlignRight
 
         }
