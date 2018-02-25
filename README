@@ -9,7 +9,7 @@ The real purpose here is to study some aspects of C++ or programming in general.
 If the app in some folder doesn't work, it means it's not finished yet.
 All the future apps in this project should be described here in this file.
 
-1 - Calculator (MVC model)
+1 - Calculator (MVC pattern)
 A calculator based on Model-View-Controller pattern. 
 The goal here is not to create a calculator per se, but to undestand the basics of MVC and SOLID.
 Calculator should contain a "Number" field, number buttons, a comma, equal sign, reset buttons, and the basic arithmetic operations (+,-,*,/).
