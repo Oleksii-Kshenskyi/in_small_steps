@@ -17,15 +17,14 @@ Nothing fancy is expected here. Do this in MVC, get SOLID where you can, and you
 When the change to calculator is done, increment the 3rd number. When some part is done, increment 2nd number. When the whole project is done,
 increment 1st number.
 NOTE TO SELF [TO REMOVE AFTER RESOLVED]: 
-1. Needs investigation as to how to refactor it the best way. 
-   - Current idea is to NOT have ANY more logic in QML other than COMPLETELY necessary. The idea is to rebuild QML connection system the following 
-     way: QML has a signal "button pressed" to which a model responds by setting its value and a view does any logic if necessary, and then the 
-     view invokes "set text" for the main display.
-   - This means that you have to also think about WHERE to organize QML connections stuff (best option is View). Currently both View and ViewModel
-     are declared as context properties. No good.
-   - CLQMLConnector has the unused method, setQMLMainText(). This method should change QML text directly. Thing is, QML doesn't want to refresh
-     GUI if called from C++. Think what can be done about it.
-   - Think about the way to remove 10 repeated blocks for buttons in QML. Maybe use the Repeater QML type somehow?
+*TOP PRIORITY*: 
+  - Think about the way to remove 10 repeated blocks for buttons in QML. Maybe use the Repeater QML type somehow?
+  ^ this is the last bit of refactoring I need to do. After that I can start with the implementation.
+  - First of all, top priority is implementing the easy C and CA buttons;
+  - Next up is implementing a new "erase one" button (arrow backwards).
+    a. This button shold be able to erase one number.
+    b. If there is only one symbol left, instead of making it "" make it "0" instead.
+    c. If it's ALREADY "0", don't do anything.
 
 2 - Effective Modern Cpp
 This is a project created for the purpose of learning stuff from said book. Try to create a small program for each item to use it the way the book
