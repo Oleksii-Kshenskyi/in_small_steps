@@ -2,7 +2,7 @@
 #define CLVIEW_H
 
 #include <QObject>
-#include "view/clviewvodel.h"
+#include "view/clviewmodel.h"
 #include "view/clqmlconnector.h"
 #include <memory>
 

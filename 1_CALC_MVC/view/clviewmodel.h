@@ -1,17 +1,16 @@
 #ifndef CLVIEWMODEL_H
 #define CLVIEWMODEL_H
 
-#include "model/clmodeldata.h"
 #include <QObject>
 
 class CLViewModel: public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString displayValue READ getDisplayValue WRITE setDisplayValue NOTIFY displayValueChanged)
+
   public:
     CLViewModel(QObject* root);
-    Q_INVOKABLE QString getDisplayValue();
-    Q_INVOKABLE void setDisplayValue(QString newValue);
+    QString getDisplayValue();
+    void setDisplayValue(QString newValue);
   signals:
     displayValueChanged(QString newValue);
   private:

@@ -44,5 +44,5 @@ HEADERS += \
     model/cloperations.h \
     model/clmodel.h \
     view/clview.h \
-    view/clviewvodel.h \
-    view/clqmlconnector.h
+    view/clqmlconnector.h \
+    view/clviewmodel.h

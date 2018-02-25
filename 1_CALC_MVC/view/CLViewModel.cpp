@@ -1,4 +1,4 @@
-#include "view/clviewvodel.h"
+#include "view/clviewmodel.h"
 #include <QQmlEngine>
 #include <QDebug>
 
