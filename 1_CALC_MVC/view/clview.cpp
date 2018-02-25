@@ -12,7 +12,8 @@ CLView::CLView(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(roo
 
 void CLView::changeModelTextForDelta(const QString &deltaText)
 {
-    this->model->setDisplayValue(this->model->getDisplayValue() + deltaText);
+    if( (this->model->getDisplayValue().size() + deltaText.size()) <= (this->qmlConnector->getQmlMainDisplayLength() / 2))
+      this->model->setDisplayValue( (this->model->getDisplayValue() == "0") ? deltaText : this->model->getDisplayValue() + deltaText);
 }
 
 void CLView::setQmlText(const QString& newText)

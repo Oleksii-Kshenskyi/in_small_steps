@@ -14,6 +14,7 @@ class CLQmlConnector: public QObject
 public:
     CLQmlConnector(QObject* root, std::shared_ptr<QQuickView> mainView);
     QString getQmlMainDisplayText();
+    int getQmlMainDisplayLength();
 signals:
     void changeModelTextForDelta(const QString& deltaText);
 public slots:

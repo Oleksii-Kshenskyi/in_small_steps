@@ -15,6 +15,7 @@ Item {
     height: 500
 
     property alias mainDisplayText: teMainNumericDisplay.text
+    property alias mainDisplayLength: teMainNumericDisplay.maximumLength
     signal numberClicked(string number);
     signal offClicked();
 

@@ -27,3 +27,8 @@ QString CLQmlConnector::getQmlMainDisplayText()
 
     return displayText.toString();
 }
+
+int CLQmlConnector::getQmlMainDisplayLength()
+{
+    return QQmlProperty(this->object, "mainDisplayLength").read().toInt();
+}
