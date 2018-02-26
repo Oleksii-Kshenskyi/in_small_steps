@@ -9,5 +9,10 @@ int main(int argc, char *argv[])
 
     CLTestBuilder clbBuilder(&app, mainView); Q_UNUSED(clbBuilder);
 
+    mainView->setMaximumHeight(mainView->height());
+    mainView->setMaximumWidth(mainView->width());
+    mainView->setMinimumHeight(mainView->height());
+    mainView->setMinimumWidth(mainView->width());
+
     return app.exec();
 }
