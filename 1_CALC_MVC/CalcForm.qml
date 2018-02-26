@@ -96,12 +96,11 @@ Item {
         }
 
             Button {
-                id: btNumericOne
-                y: 0
+                id: btNumericSeven
                 Layout.row: 2
                 Layout.column: 0
                 width: height
-                text: qsTr("1")
+                text: qsTr("7")
                 font.pointSize: 24
                 highlighted: false
 
@@ -113,12 +112,12 @@ Item {
             }
 
             Button {
-                id: btNumericTwo
+                id: btNumericEight
                 width: height
                 Layout.row: 2
                 Layout.column: 1
 
-                text: qsTr("2")
+                text: qsTr("8")
                 highlighted: false
                 font.pointSize: 24
 
@@ -130,11 +129,11 @@ Item {
             }
 
             Button {
-                id: btNumericThree
+                id: btNumericNine
                 width: height
                 Layout.row: 2
                 Layout.column: 2
-                text: qsTr("3")
+                text: qsTr("9")
                 highlighted: false
                 font.pointSize: 24
 
@@ -193,11 +192,11 @@ Item {
 
             }
             Button {
-                id: btNumericSeven
+                id: btNumericOne
                 width: height
                 Layout.row: 4
                 Layout.column: 0
-                text: qsTr("7")
+                text: qsTr("1")
                 highlighted: false
                 font.pointSize: 24
 
@@ -209,11 +208,11 @@ Item {
             }
 
             Button {
-                id: btNumericEight
+                id: btNumericTwo
                 width: height
                 Layout.row: 4
                 Layout.column: 1
-                text: qsTr("8")
+                text: qsTr("2")
                 highlighted: false
                 font.pointSize: 24
 
@@ -225,11 +224,11 @@ Item {
             }
 
             Button {
-                id: btNumericNine
+                id: btNumericThree
                 width: height
                 Layout.row: 4
                 Layout.column: 2
-                text: qsTr("9")
+                text: qsTr("3")
                 highlighted: false
                 font.pointSize: 24
 
