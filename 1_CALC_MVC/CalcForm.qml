@@ -95,12 +95,15 @@ Item {
             onClicked: offClicked();
         }
 
-            Button {
-                id: btNumericSeven
+        Repeater
+        {
+            model: 3
+            Button
+            {
                 Layout.row: 2
-                Layout.column: 0
+                Layout.column: index
                 width: height
-                text: qsTr("7")
+                text: index + 7
                 font.pointSize: 24
                 highlighted: false
 
@@ -108,224 +111,133 @@ Item {
                 {
                     numberClicked(text);
                 }
-
             }
+        }
 
-            Button {
-                id: btNumericEight
-                width: height
-                Layout.row: 2
-                Layout.column: 1
-
-                text: qsTr("8")
-                highlighted: false
-                font.pointSize: 24
-
-                onClicked:
-                {
-                    numberClicked(text);
-                }
-
-            }
-
-            Button {
-                id: btNumericNine
-                width: height
-                Layout.row: 2
-                Layout.column: 2
-                text: qsTr("9")
-                highlighted: false
-                font.pointSize: 24
-
-                onClicked:
-                {
-                    numberClicked(text);
-                }
-
-            }
-
-            Button {
-                id: btNumericFour
-                width: height
+        Repeater
+        {
+            model: 3
+            Button
+            {
                 Layout.row: 3
-                Layout.column: 0
-                text: qsTr("4")
-                highlighted: false
+                Layout.column: index
+                width: height
+                text: index + 4
                 font.pointSize: 24
+                highlighted: false
 
                 onClicked:
                 {
                     numberClicked(text);
                 }
-
             }
+        }
 
-            Button {
-                id: btNumericFive
-                width: height
-                Layout.row: 3
-                Layout.column: 1
-                text: qsTr("5")
-                highlighted: false
-                font.pointSize: 24
-
-                onClicked:
-                {
-                    numberClicked(text);
-                }
-
-            }
-
-            Button {
-                id: btNumericSix
-                width: height
-                Layout.row: 3
-                Layout.column: 2
-                text: qsTr("6")
-                highlighted: false
-                font.pointSize: 24
-
-                onClicked:
-                {
-                    numberClicked(text);
-                }
-
-            }
-            Button {
-                id: btNumericOne
-                width: height
+        Repeater
+        {
+            model: 3
+            Button
+            {
                 Layout.row: 4
-                Layout.column: 0
-                text: qsTr("1")
-                highlighted: false
+                Layout.column: index
+                width: height
+                text: index + 1
                 font.pointSize: 24
+                highlighted: false
 
                 onClicked:
                 {
                     numberClicked(text);
                 }
-
             }
+        }
 
-            Button {
-                id: btNumericTwo
-                width: height
-                Layout.row: 4
-                Layout.column: 1
-                text: qsTr("2")
-                highlighted: false
-                font.pointSize: 24
+        Button
+        {
+            id: btNumericZero
+            width: height
+            Layout.row: 5
+            Layout.column: 1
+            text: qsTr("0")
+            highlighted: false
+            font.pointSize: 24
 
-                onClicked:
-                {
-                    numberClicked(text);
-                }
-
+            onClicked:
+            {
+                numberClicked(text);
             }
+        }
 
-            Button {
-                id: btNumericThree
-                width: height
-                Layout.row: 4
-                Layout.column: 2
-                text: qsTr("3")
-                highlighted: false
-                font.pointSize: 24
+        Button
+        {
+            id: btDot
+            width: height
+            Layout.row: 5
+            Layout.column: 0
 
-                onClicked:
-                {
-                    numberClicked(text);
-                }
+            text: qsTr(".")
+            highlighted: false
+            font.pointSize: 24
+        }
 
-            }
-            Button {
-                id: btNumericZero
-                width: height
-                Layout.row: 5
-                Layout.column: 1
+        Button
+        {
+            id: btEqualsSign
+            width: height
+            Layout.row: 5
+            Layout.column: 2
 
-                text: qsTr("0")
-                highlighted: false
-                font.pointSize: 24
+            text: qsTr("=")
+            highlighted: false
+            font.pointSize: 24
+        }
 
-                onClicked:
-                {
-                    numberClicked(text);
-                }
+        Button
+        {
+            id: btOperationPlus
+            width: height
+            Layout.row: 2
+            Layout.column: 3
 
-            }
+            text: qsTr("+")
+            highlighted: false
+            font.pointSize: 24
+        }
 
-            Button {
-                id: btDot
-                width: height
-                Layout.row: 5
-                Layout.column: 0
+        Button
+        {
+            id: btOperationMinus
+            width: height
+            Layout.row: 3
+            Layout.column: 3
 
-                text: qsTr(".")
-                highlighted: false
-                font.pointSize: 24
+            text: qsTr("-")
+            highlighted: false
+            font.pointSize: 24
+        }
 
-            }
+        Button
+        {
+            id: btOperationMultiply
+            width: height
+            Layout.row: 4
+            Layout.column: 3
 
-            Button {
-                id: btEqualsSign
-                width: height
-                Layout.row: 5
-                Layout.column: 2
+            text: qsTr("*")
+            highlighted: false
+            font.pointSize: 24
+        }
 
-                text: qsTr("=")
-                highlighted: false
-                font.pointSize: 24
+        Button
+        {
+            id: btOperationDivide
+            width: height
+            Layout.row: 5
+            Layout.column: 3
 
-            }
-
-            Button {
-                id: btOperationPlus
-                width: height
-                Layout.row: 2
-                Layout.column: 3
-
-                text: qsTr("+")
-                highlighted: false
-                font.pointSize: 24
-
-            }
-
-            Button {
-                id: btOperationMinus
-                width: height
-                Layout.row: 3
-                Layout.column: 3
-
-                text: qsTr("-")
-                highlighted: false
-                font.pointSize: 24
-
-            }
-
-            Button {
-                id: btOperationMultiply
-                width: height
-                Layout.row: 4
-                Layout.column: 3
-
-                text: qsTr("*")
-                highlighted: false
-                font.pointSize: 24
-
-            }
-
-            Button {
-                id: btOperationDivide
-                width: height
-                Layout.row: 5
-                Layout.column: 3
-
-                text: qsTr("/")
-                highlighted: false
-                font.pointSize: 24
-
-            }
-
+            text: qsTr("/")
+            highlighted: false
+            font.pointSize: 24
+        }
     }
 }
