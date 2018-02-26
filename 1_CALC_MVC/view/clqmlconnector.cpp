@@ -12,6 +12,7 @@ CLQmlConnector::CLQmlConnector(QObject *root, std::shared_ptr<QQuickView> mainVi
 
     QObject::connect(this->object, SIGNAL(numberClicked(const QString&)), this, SIGNAL(changeModelTextForDelta(const QString&)));
     QObject::connect(this->object, SIGNAL(offClicked()), qApp, SLOT(quit()));
+    QObject::connect(this->object, SIGNAL(cancelClicked()), this, SIGNAL(resetQmlMainDisplay()));
 
 }
 

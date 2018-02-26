@@ -18,6 +18,7 @@ Item {
     property alias mainDisplayLength: teMainNumericDisplay.maximumLength
     signal numberClicked(string number);
     signal offClicked();
+    signal cancelClicked();
 
     function getDisplayText()
     {
@@ -67,6 +68,8 @@ Item {
             text: qsTr("C")
             font.pointSize: 24
             highlighted: false
+
+            onClicked: cancelClicked();
 
         }
 

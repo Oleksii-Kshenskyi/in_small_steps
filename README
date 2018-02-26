@@ -18,13 +18,11 @@ When the change to calculator is done, increment the 3rd number. When some part 
 increment 1st number.
 NOTE TO SELF [TO REMOVE AFTER RESOLVED]: 
 *TOP PRIORITY*: 
-  - Think about the way to remove 10 repeated blocks for buttons in QML. Maybe use the Repeater QML type somehow?
-  ^ this is the last bit of refactoring I need to do. After that I can start with the implementation.
-  - First of all, top priority is implementing the easy C and CA buttons;
   - Next up is implementing a new "erase one" button (arrow backwards).
     a. This button shold be able to erase one number.
     b. If there is only one symbol left, instead of making it "" make it "0" instead.
     c. If it's ALREADY "0", don't do anything.
+  - After that, I can start on implementing operations.
 
 2 - Effective Modern Cpp
 This is a project created for the purpose of learning stuff from said book. Try to create a small program for each item to use it the way the book

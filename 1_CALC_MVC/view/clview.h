@@ -18,6 +18,7 @@ private:
     std::unique_ptr<CLQmlConnector> qmlConnector;
 private slots:
     void changeModelTextForDelta(const QString& deltaText);
+    void resetQmlDisplay();
 };
 
 #endif // CLVIEW_H

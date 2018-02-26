@@ -17,6 +17,7 @@ public:
     int getQmlMainDisplayLength();
 signals:
     void changeModelTextForDelta(const QString& deltaText);
+    void resetQmlMainDisplay();
 public slots:
     void setQmlMainDisplayText(const QString& newText);
 private:
