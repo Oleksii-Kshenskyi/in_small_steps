@@ -97,51 +97,13 @@ Item {
 
         Repeater
         {
-            model: 3
+            model: 9
             Button
             {
-                Layout.row: 2
-                Layout.column: index
+                Layout.row: 2 + Math.floor(index / 3)
+                Layout.column: index % 3
                 width: height
-                text: index + 7
-                font.pointSize: 24
-                highlighted: false
-
-                onClicked:
-                {
-                    numberClicked(text);
-                }
-            }
-        }
-
-        Repeater
-        {
-            model: 3
-            Button
-            {
-                Layout.row: 3
-                Layout.column: index
-                width: height
-                text: index + 4
-                font.pointSize: 24
-                highlighted: false
-
-                onClicked:
-                {
-                    numberClicked(text);
-                }
-            }
-        }
-
-        Repeater
-        {
-            model: 3
-            Button
-            {
-                Layout.row: 4
-                Layout.column: index
-                width: height
-                text: index + 1
+                text: (Layout.row === 2) ? index + 7 : ((Layout.row === 3) ? index + 1 : index - 5)
                 font.pointSize: 24
                 highlighted: false
 
