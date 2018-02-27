@@ -19,6 +19,7 @@ Item {
     signal numberClicked(string number);
     signal offClicked();
     signal cancelClicked();
+    signal eraseOneClicked();
 
     function getDisplayText()
     {
@@ -82,6 +83,20 @@ Item {
             text: qsTr("CA")
             font.pointSize: 24
             highlighted: false
+
+        }
+
+        Button {
+            id: btEraseOne
+            y: 0
+            Layout.row: 1
+            Layout.column: 2
+            width: height
+            text: qsTr("\u2190")
+            font.pointSize: 24
+            highlighted: false
+
+            onClicked: eraseOneClicked();
 
         }
 

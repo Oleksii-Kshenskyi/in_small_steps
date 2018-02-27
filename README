@@ -17,12 +17,7 @@ Nothing fancy is expected here. Do this in MVC, get SOLID where you can, and you
 When the change to calculator is done, increment the 3rd number. When some part is done, increment 2nd number. When the whole project is done,
 increment 1st number.
 NOTE TO SELF [TO REMOVE AFTER RESOLVED]: 
-*TOP PRIORITY*: 
-  - Next up is implementing a new "erase one" button (arrow backwards).
-    a. This button shold be able to erase one number.
-    b. If there is only one symbol left, instead of making it "" make it "0" instead.
-    c. If it's ALREADY "0", don't do anything.
-  - After that, I can start on implementing operations.
+  - Should start implementing operations already.
 
 2 - Effective Modern Cpp
 This is a project created for the purpose of learning stuff from said book. Try to create a small program for each item to use it the way the book

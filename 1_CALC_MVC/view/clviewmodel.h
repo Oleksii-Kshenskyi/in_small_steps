@@ -11,6 +11,8 @@ class CLViewModel: public QObject
     CLViewModel(QObject* root);
     QString getDisplayValue();
     void setDisplayValue(QString newValue);
+    void eraseOne();
+    int getDisplaySize();
   signals:
     displayValueChanged(QString newValue);
   private:

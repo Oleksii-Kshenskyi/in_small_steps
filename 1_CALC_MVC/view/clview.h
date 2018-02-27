@@ -19,6 +19,7 @@ private:
 private slots:
     void changeModelTextForDelta(const QString& deltaText);
     void resetQmlDisplay();
+    void eraseOne();
 };
 
 #endif // CLVIEW_H
