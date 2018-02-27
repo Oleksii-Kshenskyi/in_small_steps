@@ -42,3 +42,8 @@ void CLView::eraseOne()
     else
         this->model->setDisplayValue("0");
 }
+
+void CLView::setModelText(const QString& newText)
+{
+    this->model->setDisplayValue(newText);
+}
