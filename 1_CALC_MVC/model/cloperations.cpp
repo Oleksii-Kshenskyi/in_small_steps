@@ -1,52 +1,52 @@
 #include "cloperations.h"
 
-CLIArithmeticOperation::CLIArithmeticOperation(std::shared_ptr<CLModelData> clmNewModel)
-    : clmCurrentModel(clmNewModel)
+CLIArithmeticOperation::CLIArithmeticOperation(std::shared_ptr<CLModel> newModel)
+    : model(newModel)
 {
 
 }
 
-qreal CLIArithmeticOperation::getResult()
+double CLIArithmeticOperation::getResult()
 {
-    return clmCurrentModel->getResult();
+    return this->model->getResult();
 }
 
-CLOAddition::CLOAddition(std::shared_ptr<CLModelData> clmNewModel) : CLIArithmeticOperation(clmNewModel)
-{
-    execute();
-}
-
-CLOSubstraction::CLOSubstraction(std::shared_ptr<CLModelData> clmNewModel) : CLIArithmeticOperation(clmNewModel)
+CLOAddition::CLOAddition(std::shared_ptr<CLModel> newModel) : CLIArithmeticOperation(newModel)
 {
     execute();
 }
 
-CLOMultiplication::CLOMultiplication(std::shared_ptr<CLModelData> clmNewModel) : CLIArithmeticOperation(clmNewModel)
+CLOSubstraction::CLOSubstraction(std::shared_ptr<CLModel> newModel) : CLIArithmeticOperation(newModel)
 {
     execute();
 }
 
-CLODivision::CLODivision(std::shared_ptr<CLModelData> clmNewModel) : CLIArithmeticOperation(clmNewModel)
+CLOMultiplication::CLOMultiplication(std::shared_ptr<CLModel> newModel) : CLIArithmeticOperation(newModel)
+{
+    execute();
+}
+
+CLODivision::CLODivision(std::shared_ptr<CLModel> newModel) : CLIArithmeticOperation(newModel)
 {
     execute();
 }
 
 void CLOAddition::execute()
 {
-    clmCurrentModel->setResult(clmCurrentModel->getFirst() + clmCurrentModel->getSecond());
+    this->model->setResult(this->model->getFirst() + this->model->getSecond());
 }
 
 void CLOSubstraction::execute()
 {
-    clmCurrentModel->setResult(clmCurrentModel->getFirst() - clmCurrentModel->getSecond());
+    this->model->setResult(this->model->getFirst() - this->model->getSecond());
 }
 
 void CLOMultiplication::execute()
 {
-    clmCurrentModel->setResult(clmCurrentModel->getFirst() * clmCurrentModel->getSecond());
+    this->model->setResult(this->model->getFirst() * this->model->getSecond());
 }
 
 void CLODivision::execute()
 {
-    clmCurrentModel->setResult(clmCurrentModel->getFirst() / clmCurrentModel->getSecond());
+    this->model->setResult(this->model->getFirst() / this->model->getSecond());
 }

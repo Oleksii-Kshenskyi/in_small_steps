@@ -1,22 +1,22 @@
 #ifndef CLMODELDATA_H
 #define CLMODELDATA_H
 
-#include <QtGlobal>
-
 class CLModelData
 {
   public:
-    CLModelData(qreal fNewFirst, qreal fNewSecond);
-    void setFirst(qreal fNewFirst);
-    qreal getFirst();
-    void setSecond(qreal fNewSecond);
-    qreal getSecond();
-    void setResult(qreal fNewResult);
-    qreal getResult();
+    CLModelData();
+
+    void setFirst(double newFirst);
+    double getFirst();
+    void setSecond(double newSecond);
+    double getSecond();
+    void setResult(double newResult);
+    double getResult();
+
   private:
-    qreal fFirstOperand;
-    qreal fSecondOperand;
-    qreal fResult;
+    double first;
+    double second;
+    double result;
 };
 
 #endif // CLMODELDATA_H

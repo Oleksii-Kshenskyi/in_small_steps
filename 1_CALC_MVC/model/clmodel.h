@@ -2,16 +2,22 @@
 #define CLMODEL_H
 #include <QtGlobal>
 #include <memory>
-#include "model/cloperations.h"
+#include "model/clmodeldata.h"
 
 class CLModel
 {
   public:
-    CLModel(std::shared_ptr<CLIArithmeticOperation> cloNewPointer);
-    qreal getResult();
-    void setOperation(std::shared_ptr<CLIArithmeticOperation> cloNewPointer);
+    CLModel();
+
+    double getFirst();
+    void setFirst(double newFirst);
+    double getSecond();
+    void setSecond(double newSecond);
+    void setResult(double newResult);
+    double getResult();
+
   private:
-    std::shared_ptr<CLIArithmeticOperation> cloPointer;
+    CLModelData data;
 };
 
 

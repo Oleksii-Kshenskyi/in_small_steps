@@ -1,37 +1,37 @@
 #include "clmodeldata.h"
 
-CLModelData::CLModelData(qreal fNewFirst, qreal fNewSecond)
-    : fFirstOperand(fNewFirst), fSecondOperand(fNewSecond)
+CLModelData::CLModelData()
+    : first(0), second(0), result(0)
 {
 
 }
 
-void CLModelData::setFirst(qreal fNewFirst)
+void CLModelData::setFirst(double newFirst)
 {
-    fFirstOperand = fNewFirst;
+    this->first = newFirst;
 }
 
-qreal CLModelData::getFirst()
+double CLModelData::getFirst()
 {
-    return fFirstOperand;
+    return this->first;
 }
 
-void CLModelData::setSecond(qreal fNewSecond)
+void CLModelData::setSecond(double newSecond)
 {
-    fSecondOperand = fNewSecond;
+    this->second = newSecond;
 }
 
-qreal CLModelData::getSecond()
+double CLModelData::getSecond()
 {
-    return fSecondOperand;
+    return this->second;
 }
 
-void CLModelData::setResult(qreal fNewResult)
+void CLModelData::setResult(double newResult)
 {
-    fResult = fNewResult;
+    this->result = newResult;
 }
 
-qreal CLModelData::getResult()
+double CLModelData::getResult()
 {
-    return fResult;
+    return this->result;
 }

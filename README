@@ -17,7 +17,12 @@ Nothing fancy is expected here. Do this in MVC, get SOLID where you can, and you
 When the change to calculator is done, increment the 3rd number. When some part is done, increment 2nd number. When the whole project is done,
 increment 1st number.
 NOTE TO SELF [TO REMOVE AFTER RESOLVED]: 
-  - Should start implementing operations already.
+  - Currently, the model/ subfolder has just been refactored according to my current vision of the project, unified to follow the "model" term, and
+    prepared for the controller implementation.
+  - However, the vision is not clear until the controller is mid-implementation, so we'll soon see what changes the model/ set of classes may need
+    in future.
+  - Starting the controller implementation soon. Should create an CLOperation factory to allow controller choose what operation to perform.
+  - CLOverlordController should be the main class which ties everything together (current CLTestBuilder is a sketch of that).
 
 2 - Effective Modern Cpp
 This is a project created for the purpose of learning stuff from said book. Try to create a small program for each item to use it the way the book

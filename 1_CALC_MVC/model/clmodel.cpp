@@ -1,16 +1,36 @@
 #include "clmodel.h"
 
-CLModel::CLModel(std::shared_ptr<CLIArithmeticOperation> cloNewPointer)
+CLModel::CLModel()
 {
-    setOperation(cloNewPointer);
+
 }
 
-qreal CLModel::getResult()
+double CLModel::getFirst()
 {
-    return cloPointer->getResult();
+    return this->data.getFirst();
 }
 
-void CLModel::setOperation(std::shared_ptr<CLIArithmeticOperation> cloNewPointer)
+void CLModel::setFirst(double newFirst)
 {
-    cloPointer.swap(cloNewPointer);
+    this->data.setFirst(newFirst);
+}
+
+double CLModel::getSecond()
+{
+    return this->data.getSecond();
+}
+
+void CLModel::setSecond(double newSecond)
+{
+    this->data.setSecond(newSecond);
+}
+
+void CLModel::setResult(double newResult)
+{
+    this->data.setResult(newResult);
+}
+
+double CLModel::getResult()
+{
+    return this->data.getResult();
 }
