@@ -1,0 +1,9 @@
+#ifndef CLOVERLORDCONTROLLER_H
+#define CLOVERLORDCONTROLLER_H
+
+class CLOverlordController
+{
+
+};
+
+#endif //CLOVERLORDCONTROLLER_H

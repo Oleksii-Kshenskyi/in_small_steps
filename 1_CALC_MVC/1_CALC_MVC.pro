@@ -11,7 +11,8 @@ SOURCES += main.cpp \
     clbuilder.cpp \
     view/clview.cpp \
     view/clviewmodel.cpp \
-    view/clqmlconnector.cpp
+    view/clqmlconnector.cpp \
+    controller/cloverlordcontroller.cpp
 
 RESOURCES += qml.qrc
 
@@ -45,4 +46,5 @@ HEADERS += \
     model/clmodel.h \
     view/clview.h \
     view/clqmlconnector.h \
-    view/clviewmodel.h
+    view/clviewmodel.h \
+    controller/cloverlordcontroller.h
