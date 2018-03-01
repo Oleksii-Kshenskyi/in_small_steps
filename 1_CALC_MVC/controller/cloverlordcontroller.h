@@ -5,10 +5,16 @@
 #include <QQuickView>
 #include <memory>
 #include "model/cloperationfactory.h"
+#include "view/clview.h"
 
 class CLOverlordController: public QObject
 {
-    CLOverlordController(QObject* root, std::shared_ptr<QQuickView> view, std::shared_ptr<CLOperationFactory> factory);
+  public:
+    CLOverlordController(QObject* root, std::shared_ptr<QQuickView> view);
+
+  private:
+    std::shared_ptr<CLIArithmeticOperation> operation;
+    std::shared_ptr<CLView> view;
 };
 
 #endif //CLOVERLORDCONTROLLER_H

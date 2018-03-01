@@ -1,5 +1,7 @@
 #include "clbuilder.h"
 #include <QQuickView>
+#include "controller/cloverlordcontroller.h"
+#include "model/cloperationfactory.h"
 
 int main(int argc, char *argv[])
 {
@@ -7,7 +9,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     std::shared_ptr<QQuickView> mainView = std::make_shared<QQuickView>();
 
-    CLTestBuilder clbBuilder(&app, mainView); Q_UNUSED(clbBuilder);
+    CLOverlordController controller(&app, mainView);
 
     mainView->setMaximumHeight(mainView->height());
     mainView->setMaximumWidth(mainView->width());

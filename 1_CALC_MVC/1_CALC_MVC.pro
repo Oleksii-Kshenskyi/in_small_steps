@@ -8,7 +8,6 @@ SOURCES += main.cpp \
     model/cloperations.cpp \
     model/clmodeldata.cpp \
     model/clmodel.cpp \
-    clbuilder.cpp \
     view/clview.cpp \
     view/clviewmodel.cpp \
     view/clqmlconnector.cpp \
@@ -40,7 +39,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #!isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    clbuilder.h \
     model/clmodel.h \
     model/clmodeldata.h \
     model/cloperations.h \
