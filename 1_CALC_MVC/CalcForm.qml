@@ -21,6 +21,7 @@ Item {
     signal cancelClicked();
     signal eraseOneClicked();
     signal operationClicked(string operation);
+    signal equalsSignClicked();
 
     function getDisplayText()
     {
@@ -171,6 +172,8 @@ Item {
             text: qsTr("=")
             highlighted: false
             font.pointSize: 24
+
+            onClicked: equalsSignClicked();
         }
 
         Button

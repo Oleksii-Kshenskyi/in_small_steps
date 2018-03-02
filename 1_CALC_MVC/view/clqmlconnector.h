@@ -20,6 +20,7 @@ signals:
     void resetQmlMainDisplay();
     void eraseOne();
     void operationClicked(const QString& operation);
+    void equalsSignClicked();
 public slots:
     void setQmlMainDisplayText(const QString& newText);
 private:

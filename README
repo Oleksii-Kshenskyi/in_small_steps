@@ -17,9 +17,11 @@ Nothing fancy is expected here. Do this in MVC, get SOLID where you can, and you
 When the change to calculator is done, increment the 3rd number. When some part is done, increment 2nd number. When the whole project is done,
 increment 1st number.
 NOTE TO SELF [TO REMOVE AFTER RESOLVED]: 
-  - CLOverlordController is at its minimum and at least performs the functions of builder now;
-  - Next step is to allow overlord controller to use the factory correctly. It should choose what operation to create on runtime: depending on
-    what operation button has been pressed, controller creates a correct operation object via factory.
+  - Operations are performed correctly at the moment, however, the long-term behavior still requires much refactoring;
+  - Operation sequence and app behavior should be fully conformant to the standard MS Windows calculator.
+  - After solving the operation sequence problem:
+    a. Introduce floating point logic;
+    b. Implement CA button;
 
 2 - Effective Modern Cpp
 This is a project created for the purpose of learning stuff from said book. Try to create a small program for each item to use it the way the book

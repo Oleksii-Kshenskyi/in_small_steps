@@ -1,7 +1,7 @@
 #include "clview.h"
 #include <QDebug>
 
-CLView::CLView(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(root)
+CLView::CLView(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(root), clearNext(false)
 {
    this->model = std::make_shared<CLViewModel>(root);
    this->qmlConnector = std::make_unique<CLQmlConnector>(root, mainView);
@@ -11,6 +11,7 @@ CLView::CLView(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(roo
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::resetQmlMainDisplay, this, &CLView::resetQmlDisplay);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::eraseOne, this, &CLView::eraseOne);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::operationClicked, this, &CLView::operationClicked);
+   QObject::connect(this->qmlConnector.get(), &CLQmlConnector::equalsSignClicked, this, &CLView::equalsSignClicked);
 }
 
 /**
@@ -23,7 +24,9 @@ CLView::CLView(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(roo
 void CLView::changeModelTextForDelta(const QString &deltaText)
 {
     if( (this->model->getDisplaySize() + deltaText.size()) <= (this->qmlConnector->getQmlMainDisplayLength() / 2))
-      this->model->setDisplayValue( (this->model->getDisplayValue() == "0") ? deltaText : this->model->getDisplayValue() + deltaText);
+      this->model->setDisplayValue( ((this->model->getDisplayValue() == "0") || this->clearNext) ? deltaText : this->model->getDisplayValue() + deltaText);
+
+    this->clearNext = false;
 }
 
 void CLView::setQmlText(const QString& newText)
@@ -47,4 +50,14 @@ void CLView::eraseOne()
 void CLView::setModelText(const QString& newText)
 {
     this->model->setDisplayValue(newText);
+}
+
+QString CLView::getModelText()
+{
+    return this->model->getDisplayValue();
+}
+
+void CLView::clearLater()
+{
+    this->clearNext = true;
 }

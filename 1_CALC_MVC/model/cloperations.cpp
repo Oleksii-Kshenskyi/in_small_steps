@@ -6,29 +6,39 @@ CLIArithmeticOperation::CLIArithmeticOperation(std::shared_ptr<CLModel> newModel
 
 }
 
-double CLIArithmeticOperation::getResult()
+QString CLIArithmeticOperation::getResult()
 {
-    return this->model->getResult();
+    return QString::number(this->model->getResult(), 'g', 22);
+}
+
+void CLIArithmeticOperation::setFirst(const QString& first)
+{
+    this->model->setFirst(first.toDouble());
+}
+
+void CLIArithmeticOperation::setSecond(const QString& second)
+{
+    this->model->setSecond(second.toDouble());
 }
 
 CLOAddition::CLOAddition(std::shared_ptr<CLModel> newModel) : CLIArithmeticOperation(newModel)
 {
-    execute();
+
 }
 
 CLOSubstraction::CLOSubstraction(std::shared_ptr<CLModel> newModel) : CLIArithmeticOperation(newModel)
 {
-    execute();
+
 }
 
 CLOMultiplication::CLOMultiplication(std::shared_ptr<CLModel> newModel) : CLIArithmeticOperation(newModel)
 {
-    execute();
+
 }
 
 CLODivision::CLODivision(std::shared_ptr<CLModel> newModel) : CLIArithmeticOperation(newModel)
 {
-    execute();
+
 }
 
 void CLOAddition::execute()

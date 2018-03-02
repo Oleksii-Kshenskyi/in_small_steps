@@ -3,16 +3,21 @@
 
 #include "model/clmodel.h"
 #include <memory>
+#include <QString>
 
 class CLIArithmeticOperation
 {
   public:
     CLIArithmeticOperation(std::shared_ptr<CLModel> newModel);
     virtual ~CLIArithmeticOperation() = default;
+
+    QString getResult();
+    void setFirst(const QString& first);
+    void setSecond(const QString& second);
     virtual void execute() = 0;
-    double getResult();
   protected:
     std::shared_ptr<CLModel> model;
+
 };
 
 class CLOAddition: public CLIArithmeticOperation

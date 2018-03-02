@@ -15,6 +15,7 @@ class CLOverlordController: public QObject
 
   private slots:
     void createOperation(const QString& operation);
+    void processOperation();
 
   private:
     std::shared_ptr<CLIArithmeticOperation> operation;
