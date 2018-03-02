@@ -1,17 +1,17 @@
 #include "cloperationfactory.h"
 
 
-CLOperationFactory::CLOperationFactory(const QString& operation, std::shared_ptr<CLModel> model): operation(operation), model(model), functions {{"add", &CLOperationFactory::createAdd},
-                                                                                                                                                 {"sub", &CLOperationFactory::createSub},
-                                                                                                                                                 {"mul", &CLOperationFactory::createMul},
-                                                                                                                                                 {"div", &CLOperationFactory::createDiv}}
+CLOperationFactory::CLOperationFactory(std::shared_ptr<CLModel> model): model(model), functions {{"add", &CLOperationFactory::createAdd},
+                                                                                                 {"sub", &CLOperationFactory::createSub},
+                                                                                                 {"mul", &CLOperationFactory::createMul},
+                                                                                                 {"div", &CLOperationFactory::createDiv}}
 {
 
 }
 
-std::shared_ptr<CLIArithmeticOperation> CLOperationFactory::create()
+std::shared_ptr<CLIArithmeticOperation> CLOperationFactory::create(const QString& operation)
 {
-    return (this->*functions[this->operation])();
+    return (this->*functions[operation])();
 }
 
 std::shared_ptr<CLIArithmeticOperation> CLOperationFactory::createAdd()

@@ -11,6 +11,8 @@ class CLView : public QObject
     Q_OBJECT
 public:
     CLView(QObject* root, std::shared_ptr<QQuickView> mainView);
+signals:
+    void operationClicked(const QString& operation);
 public slots:
     void setModelText(const QString& newText);
 private:

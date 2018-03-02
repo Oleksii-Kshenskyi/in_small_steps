@@ -10,6 +10,7 @@ CLView::CLView(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(roo
    QObject::connect(this->model.get(), &CLViewModel::displayValueChanged, this, &CLView::setQmlText);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::resetQmlMainDisplay, this, &CLView::resetQmlDisplay);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::eraseOne, this, &CLView::eraseOne);
+   QObject::connect(this->qmlConnector.get(), &CLQmlConnector::operationClicked, this, &CLView::operationClicked);
 }
 
 /**

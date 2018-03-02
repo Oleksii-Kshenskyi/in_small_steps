@@ -20,6 +20,7 @@ Item {
     signal offClicked();
     signal cancelClicked();
     signal eraseOneClicked();
+    signal operationClicked(string operation);
 
     function getDisplayText()
     {
@@ -182,6 +183,8 @@ Item {
             text: qsTr("+")
             highlighted: false
             font.pointSize: 24
+
+            onClicked: operationClicked("add");
         }
 
         Button
@@ -194,6 +197,8 @@ Item {
             text: qsTr("-")
             highlighted: false
             font.pointSize: 24
+
+            onClicked: operationClicked("sub");
         }
 
         Button
@@ -206,6 +211,8 @@ Item {
             text: qsTr("*")
             highlighted: false
             font.pointSize: 24
+
+            onClicked: operationClicked("mul");
         }
 
         Button
@@ -218,6 +225,8 @@ Item {
             text: qsTr("/")
             highlighted: false
             font.pointSize: 24
+
+            onClicked: operationClicked("div");
         }
     }
 }

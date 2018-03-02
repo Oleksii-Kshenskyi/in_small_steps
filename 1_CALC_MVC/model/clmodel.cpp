@@ -2,7 +2,9 @@
 
 CLModel::CLModel()
 {
-
+    this->data.setFirst(0);
+    this->data.setSecond(0);
+    this->data.setResult(0);
 }
 
 double CLModel::getFirst()

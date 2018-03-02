@@ -14,6 +14,7 @@ CLQmlConnector::CLQmlConnector(QObject *root, std::shared_ptr<QQuickView> mainVi
     QObject::connect(this->object, SIGNAL(offClicked()), qApp, SLOT(quit()));
     QObject::connect(this->object, SIGNAL(cancelClicked()), this, SIGNAL(resetQmlMainDisplay()));
     QObject::connect(this->object, SIGNAL(eraseOneClicked()), this, SIGNAL(eraseOne()));
+    QObject::connect(this->object, SIGNAL(operationClicked(const QString&)), this, SIGNAL(operationClicked(const QString&)));
 
 }
 

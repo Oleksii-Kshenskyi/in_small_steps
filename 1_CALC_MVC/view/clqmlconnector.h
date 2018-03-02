@@ -19,6 +19,7 @@ signals:
     void changeModelTextForDelta(const QString& deltaText);
     void resetQmlMainDisplay();
     void eraseOne();
+    void operationClicked(const QString& operation);
 public slots:
     void setQmlMainDisplayText(const QString& newText);
 private:

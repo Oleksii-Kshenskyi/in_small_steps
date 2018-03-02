@@ -10,8 +10,8 @@
 class CLOperationFactory
 {
   public:
-    CLOperationFactory(const QString& operation, std::shared_ptr<CLModel> model);
-    std::shared_ptr<CLIArithmeticOperation> create();
+    CLOperationFactory(std::shared_ptr<CLModel> model);
+    std::shared_ptr<CLIArithmeticOperation> create(const QString& operation);
 
   private:
     QString operation;
