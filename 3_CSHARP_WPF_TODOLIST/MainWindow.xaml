@@ -12,21 +12,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <TextBox Grid.Column="0" Grid.Row="0" Text="Kekek">
+        <TextBox Grid.Column="0" Grid.Row="0">
         </TextBox>
         <Button Grid.Column="1">
-            <TextBlock Text="Add new TODO item" />
+            <TextBlock Text="Add new To Do item" />
         </Button>
-        <GroupBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="3" BorderBrush="Teal">
-            <ListBox>
-                <ListBoxItem>
-                    <CheckBox>
-                        <TextBlock Text="Something"></TextBlock>
-                    </CheckBox>
-                </ListBoxItem>
+        <GroupBox Header="Your Current To Do List" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="3" BorderBrush="Teal">
+            <ListBox Name="TodoListBox">
+
             </ListBox>
         </GroupBox>
     </Grid>
