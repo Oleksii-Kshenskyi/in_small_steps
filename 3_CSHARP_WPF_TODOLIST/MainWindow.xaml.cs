@@ -40,7 +40,7 @@ namespace CsharpTodolist
         {
             if (TodoListBox.SelectedItem == null)
             {
-                MessageBox.Show(this, "You have to select an item from the to do list first to edit it!");
+                MessageBox.Show(this, "To edit something you have to select it from the list first!");
                 return;
             }
 
@@ -50,6 +50,17 @@ namespace CsharpTodolist
             {
                 ((CheckBox)TodoListBox.SelectedItem).Content = newTaskName.NewTaskNameTextBox.Text;
             }
+        }
+
+        private void RemoveTaskButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (TodoListBox.SelectedItem == null)
+            {
+                MessageBox.Show(this, "To remove something you have to select it from the list first!");
+                return;
+            }
+
+            TodoListBox.Items.Remove(TodoListBox.SelectedItem);
         }
     }
 }
