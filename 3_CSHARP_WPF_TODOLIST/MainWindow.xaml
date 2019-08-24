@@ -16,7 +16,7 @@
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions> -->
         <GroupBox Header="Your Current To Do List" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="3" BorderBrush="Teal">
-            <ListBox Name="TodoListBox">
+            <ListBox Name="TodoListBox" MouseDoubleClick="TodoListBox_MouseDoubleClick">
             </ListBox>
         </GroupBox>
     </Grid>

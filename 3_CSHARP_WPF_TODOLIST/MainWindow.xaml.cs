@@ -24,5 +24,16 @@ namespace CsharpTodolist
         {
             InitializeComponent();
         }
+
+        private void TodoListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var newTaskName = new CreateRenameItemDialog();
+            newTaskName.Owner = this;
+            if (newTaskName.ShowDialog() == true)
+            {
+                TodoListBox.Items.Add(new CheckBox());
+                ((CheckBox)TodoListBox.Items.GetItemAt(TodoListBox.Items.Count - 1)).Content = newTaskName.NewTaskNameTextBox.Text;
+            }
+        }
     }
 }
