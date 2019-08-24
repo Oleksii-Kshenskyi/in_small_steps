@@ -5,24 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CsharpTodolist"
         mc:Ignorable="d"
-        Title="MainWindow" Margin="10,10,0,13" Height="450" Width="800">
+        Title="The TO DO list!!!" Margin="10,10,0,13" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
+        <!-- <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="6*"/>
-        </Grid.RowDefinitions>
-        <TextBox Grid.Column="0" Grid.Row="0">
-        </TextBox>
-        <Button Grid.Column="1">
-            <TextBlock Text="Add new To Do item" />
-        </Button>
+        </Grid.RowDefinitions> -->
         <GroupBox Header="Your Current To Do List" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="3" BorderBrush="Teal">
             <ListBox Name="TodoListBox">
-
             </ListBox>
         </GroupBox>
     </Grid>
