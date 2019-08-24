@@ -35,5 +35,21 @@ namespace CsharpTodolist
                 ((CheckBox)TodoListBox.Items.GetItemAt(TodoListBox.Items.Count - 1)).Content = newTaskName.NewTaskNameTextBox.Text;
             }
         }
+
+        private void EditTaskButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (TodoListBox.SelectedItem == null)
+            {
+                MessageBox.Show(this, "You have to select an item from the to do list first to edit it!");
+                return;
+            }
+
+            var newTaskName = new CreateRenameItemDialog();
+            newTaskName.Owner = this;
+            if (newTaskName.ShowDialog() == true)
+            {
+                ((CheckBox)TodoListBox.SelectedItem).Content = newTaskName.NewTaskNameTextBox.Text;
+            }
+        }
     }
 }

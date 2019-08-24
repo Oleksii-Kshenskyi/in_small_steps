@@ -32,7 +32,7 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
                 <Button Content="Add" Name="AddTaskButton" Grid.Row="0" Click="AddTaskButton_Click"/>
-                <Button Content="Edit" Name="EditTaskButton" Grid.Row="1"/>
+                <Button Content="Edit" Name="EditTaskButton" Grid.Row="1" Click="EditTaskButton_Click"/>
                 <Button Content="Remove" Name="RemoveTaskButton" Grid.Row="2"/>
             </Grid>
         </GroupBox>
