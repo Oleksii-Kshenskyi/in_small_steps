@@ -7,17 +7,34 @@
         mc:Ignorable="d"
         Title="The TO DO list!!!" Margin="10,10,0,13" Height="450" Width="800">
     <Grid>
-        <!-- <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
             <RowDefinition Height="6*"/>
-        </Grid.RowDefinitions> -->
-        <GroupBox Header="Your Current To Do List" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="3" BorderBrush="Teal">
-            <ListBox Name="TodoListBox" MouseDoubleClick="TodoListBox_MouseDoubleClick">
+        </Grid.RowDefinitions>
+        <GroupBox Header="Your Current To Do List" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BorderThickness="3" BorderBrush="Teal">
+            <ListBox Name="TodoListBox" BorderThickness="0">
             </ListBox>
+        </GroupBox>
+        <GroupBox Header="Controls" Name="ControlsGroupBox" Grid.Column="1" Grid.Row="0" BorderThickness="3" BorderBrush="Teal">
+            <Grid Margin="10,10,10,10">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="4,4,4,4" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Button Content="Add" Name="AddTaskButton" Grid.Row="0" Click="AddTaskButton_Click"/>
+                <Button Content="Edit" Name="EditTaskButton" Grid.Row="1"/>
+                <Button Content="Remove" Name="RemoveTaskButton" Grid.Row="2"/>
+            </Grid>
         </GroupBox>
     </Grid>
 </Window>
