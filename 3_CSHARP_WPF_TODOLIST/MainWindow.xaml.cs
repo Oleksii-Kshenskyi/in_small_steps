@@ -65,7 +65,7 @@ namespace CsharpTodolist
                 return;
             }
 
-            TodoListBox.Items.Remove(TodoListBox.SelectedItem);
+            TheTasks.Remove((CheckBoxContentNotifier)TodoListBox.SelectedItem);
         }
 
         private void CheckBox_Click(object sender, RoutedEventArgs e)
