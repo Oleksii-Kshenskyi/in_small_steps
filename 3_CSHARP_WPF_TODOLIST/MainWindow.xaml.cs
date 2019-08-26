@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,13 @@ namespace CsharpTodolist
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<CheckBoxContentNotifier> TheTasks { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            TheTasks = new ObservableCollection<CheckBoxContentNotifier>();
+            DataContext = this;
         }
 
         private void AddTaskButton_Click(object sender, RoutedEventArgs e)
@@ -31,8 +36,7 @@ namespace CsharpTodolist
             newTaskName.Owner = this;
             if (newTaskName.ShowDialog() == true)
             {
-                TodoListBox.Items.Add(new CheckBox());
-                ((CheckBox)TodoListBox.Items.GetItemAt(TodoListBox.Items.Count - 1)).Content = newTaskName.NewTaskNameTextBox.Text;
+                TheTasks.Add(new CheckBoxContentNotifier { CheckBoxContent = newTaskName.NewTaskNameTextBox.Text });
             }
         }
 
@@ -48,7 +52,8 @@ namespace CsharpTodolist
             newTaskName.Owner = this;
             if (newTaskName.ShowDialog() == true)
             {
-                ((CheckBox)TodoListBox.SelectedItem).Content = newTaskName.NewTaskNameTextBox.Text;
+                CheckBoxContentNotifier item = ((CheckBoxContentNotifier)(TodoListBox.SelectedItem));
+                item.CheckBoxContent = newTaskName.NewTaskNameTextBox.Text;
             }
         }
 
@@ -61,6 +66,12 @@ namespace CsharpTodolist
             }
 
             TodoListBox.Items.Remove(TodoListBox.SelectedItem);
+        }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(this, "BOOYA!!");
+            ((CheckBox)sender).Content = "CLICK!";
         }
     }
 }

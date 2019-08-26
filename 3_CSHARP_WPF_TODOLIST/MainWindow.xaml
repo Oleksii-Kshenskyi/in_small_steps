@@ -16,7 +16,12 @@
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <GroupBox Header="Your Current To Do List" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BorderThickness="3" BorderBrush="Teal">
-            <ListBox Name="TodoListBox" BorderThickness="0">
+            <ListBox Name="TodoListBox" BorderThickness="0" ItemsSource="{Binding TheTasks}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Click="CheckBox_Click" Content="{Binding Path=CheckBoxContent, UpdateSourceTrigger=PropertyChanged}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
         </GroupBox>
         <GroupBox Header="Controls" Name="ControlsGroupBox" Grid.Column="1" Grid.Row="0" BorderThickness="3" BorderBrush="Teal">
