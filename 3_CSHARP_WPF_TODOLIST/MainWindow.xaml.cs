@@ -16,12 +16,11 @@ using System.Windows.Shapes;
 
 namespace CsharpTodolist
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public ObservableCollection<CheckBoxContentNotifier> TheTasks { get; set; }
+
+        public static int LastUncheckedItemIndex = -1;
 
         public MainWindow()
         {
@@ -36,7 +35,8 @@ namespace CsharpTodolist
             newTaskName.Owner = this;
             if (newTaskName.ShowDialog() == true)
             {
-                TheTasks.Add(new CheckBoxContentNotifier { CheckBoxContent = newTaskName.NewTaskNameTextBox.Text });
+                LastUncheckedItemIndex++;
+                TheTasks.Insert(LastUncheckedItemIndex, new CheckBoxContentNotifier { CheckBoxContent = newTaskName.NewTaskNameTextBox.Text });
             }
         }
 
@@ -64,8 +64,14 @@ namespace CsharpTodolist
                 MessageBox.Show(this, "To remove something you have to select it from the list first!");
                 return;
             }
+            var item = (CheckBoxContentNotifier)TodoListBox.SelectedItem;
 
-            TheTasks.Remove((CheckBoxContentNotifier)TodoListBox.SelectedItem);
+            if (!item.IsTaskCompleted)
+            {
+                LastUncheckedItemIndex--;
+            }
+
+            TheTasks.Remove(item);
         }
 
         private void CheckBox_Click(object sender, RoutedEventArgs e)
@@ -75,6 +81,12 @@ namespace CsharpTodolist
             if (item.IsTaskCompleted)
             {
                 TheTasks.Move(index, TheTasks.Count - 1);
+                LastUncheckedItemIndex--;
+            }
+            else
+            {
+                LastUncheckedItemIndex++;
+                TheTasks.Move(index, LastUncheckedItemIndex);
             }
         }
     }
