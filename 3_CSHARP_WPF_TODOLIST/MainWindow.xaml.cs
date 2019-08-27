@@ -70,7 +70,6 @@ namespace CsharpTodolist
 
         private void CheckBox_Click(object sender, RoutedEventArgs e)
         {
-            // TODO - Completed items are greyed out
             // TODO - Completed items are crossed out
 
             var item = (CheckBoxContentNotifier)((CheckBox)sender).DataContext;
