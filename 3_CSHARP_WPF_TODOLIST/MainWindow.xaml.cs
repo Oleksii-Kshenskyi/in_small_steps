@@ -72,9 +72,13 @@ namespace CsharpTodolist
         {
             // TODO - Completed items are greyed out
             // TODO - Completed items are crossed out
-            //var index = TheTasks.Move()
-            var index = TheTasks.IndexOf((CheckBoxContentNotifier)((CheckBox)sender).DataContext);
-            TheTasks.Move(index, TheTasks.Count - 1);
+
+            var item = (CheckBoxContentNotifier)((CheckBox)sender).DataContext;
+            int index = TheTasks.IndexOf(item);
+            if (item.IsTaskCompleted)
+            {
+                TheTasks.Move(index, TheTasks.Count - 1);
+            }
         }
     }
 }
