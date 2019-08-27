@@ -70,8 +70,11 @@ namespace CsharpTodolist
 
         private void CheckBox_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(this, "BOOYA!!");
-            ((CheckBox)sender).Content = "CLICK!";
+            // TODO - Completed items are greyed out
+            // TODO - Completed items are crossed out
+            //var index = TheTasks.Move()
+            var index = TheTasks.IndexOf((CheckBoxContentNotifier)((CheckBox)sender).DataContext);
+            TheTasks.Move(index, TheTasks.Count - 1);
         }
     }
 }

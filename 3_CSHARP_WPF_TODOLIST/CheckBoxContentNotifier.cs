@@ -23,6 +23,20 @@ namespace CsharpTodolist
             }
         }
 
+        private bool _completed;
+        public bool IsTaskCompleted
+        {
+            get
+            {
+                return _completed;
+            }
+            set
+            {
+                _completed = value;
+                NotifyPropertyChanged("IsTaskCompleted");
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(string propertyName)
         {

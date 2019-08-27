@@ -19,7 +19,7 @@
             <ListBox Name="TodoListBox" BorderThickness="0" ItemsSource="{Binding TheTasks}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox Click="CheckBox_Click" Content="{Binding Path=CheckBoxContent, UpdateSourceTrigger=PropertyChanged}"/>
+                        <CheckBox Click="CheckBox_Click" IsChecked="{Binding Path=IsTaskCompleted, UpdateSourceTrigger=PropertyChanged}" Content="{Binding Path=CheckBoxContent, UpdateSourceTrigger=PropertyChanged}"/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
