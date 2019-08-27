@@ -1,5 +1,6 @@
 ﻿<Window x:Class="CsharpTodolist.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -15,23 +16,27 @@
             <RowDefinition Height="4*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <Grid.Resources>
-            <Style TargetType="{x:Type CheckBox}" x:Key="CheckboxStyle">
-                <Style.Triggers>
-                    <Trigger Property="IsChecked" Value="True">
-                        <Setter Property="Foreground" Value="LightGray" />
-                    </Trigger>
-                    <Trigger Property="IsEnabled" Value="False">
-                        <Setter Property="Foreground" Value="Black" />
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-        </Grid.Resources>
         <GroupBox Header="Your Current To Do List" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BorderThickness="3" BorderBrush="Teal">
             <ListBox Name="TodoListBox" BorderThickness="0" ItemsSource="{Binding TheTasks}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox Style="{DynamicResource CheckboxStyle}" Click="CheckBox_Click" IsChecked="{Binding Path=IsTaskCompleted, UpdateSourceTrigger=PropertyChanged}" Content="{Binding Path=CheckBoxContent, UpdateSourceTrigger=PropertyChanged}"/>
+                        <CheckBox Name="TheTaskBox" Style="{DynamicResource CheckboxStyle}" Click="CheckBox_Click" IsChecked="{Binding Path=IsTaskCompleted, UpdateSourceTrigger=PropertyChanged}">
+                            <TextBlock Name="TheTextOfBox" Text="{Binding Path=CheckBoxContent, UpdateSourceTrigger=PropertyChanged}"/>
+                        </CheckBox>
+                        <DataTemplate.Resources>
+                            <Style TargetType="{x:Type CheckBox}" x:Key="CheckboxStyle">
+                                <Style.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter Property="Foreground" Value="LightGray"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataTemplate.Resources>
+                        <DataTemplate.Triggers>
+                            <Trigger SourceName="TheTaskBox" Property="IsChecked" Value="True">
+                                <Setter TargetName="TheTextOfBox" Property="TextDecorations" Value="Strikethrough" />
+                            </Trigger>
+                        </DataTemplate.Triggers>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
