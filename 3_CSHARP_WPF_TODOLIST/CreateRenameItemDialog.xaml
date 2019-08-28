@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:CsharpTodolist"
         mc:Ignorable="d"
         Title="What do you want to do?" Height="100" Width="400">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:CreateRenameItemDialog.CloseKeyboardCommand}" Executed="ConfirmTaskNameButton_Click" />
+    </Window.CommandBindings>
     <Grid Margin="10,10,10,10">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />

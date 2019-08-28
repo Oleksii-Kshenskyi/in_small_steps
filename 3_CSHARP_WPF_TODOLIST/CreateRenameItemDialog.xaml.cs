@@ -24,11 +24,16 @@ namespace CsharpTodolist
             InitializeComponent();
 
             WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            CloseKeyboardCommand.InputGestures.Add(new KeyGesture(Key.Enter));
+
+            NewTaskNameTextBox.Focus();
         }
 
         private void ConfirmTaskNameButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
         }
+
+        public static RoutedCommand CloseKeyboardCommand = new RoutedCommand();
     }
 }

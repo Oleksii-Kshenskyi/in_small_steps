@@ -65,8 +65,17 @@ namespace CsharpTodolist
         public MainWindow()
         {
             InitializeComponent();
+            InitializeCommands();
             DeserializeTasks();
             DataContext = this;
+        }
+
+        private void InitializeCommands()
+        {
+            AddKeyboardCommand.InputGestures.Add(new KeyGesture(Key.A, ModifierKeys.Alt));
+            EditKeyboardCommand.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Alt));
+            RemoveKeyboardCommand.InputGestures.Add(new KeyGesture(Key.R, ModifierKeys.Alt));
+            ExitKeyboardCommand.InputGestures.Add(new KeyGesture(Key.F4, ModifierKeys.Alt));
         }
 
         private void AddTaskButton_Click(object sender, RoutedEventArgs e)
@@ -134,5 +143,15 @@ namespace CsharpTodolist
         {
             SerializeTasks();
         }
+
+        private void ExitCommand_Execute(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        public static RoutedCommand AddKeyboardCommand = new RoutedCommand();
+        public static RoutedCommand EditKeyboardCommand = new RoutedCommand();
+        public static RoutedCommand RemoveKeyboardCommand = new RoutedCommand();
+        public static RoutedCommand ExitKeyboardCommand = new RoutedCommand();
     }
 }

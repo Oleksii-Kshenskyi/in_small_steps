@@ -29,7 +29,7 @@ wants you to, and to train the principle through practice.
 Each item contains its own folder with a small project inside. When the project is updated, increment 3rd number. When the item is done, increment 
 2nd number. When the whole book is done, increment 1st number.
 
-3 - A TODO list application
+3 - A TODO list application (FINISHED!!!)
 A TODO list application that features one list where the user can put TODO items with future tasks they'd like to remember to do.
 The application is written in C#/WPF. 
 User Features:
@@ -49,7 +49,7 @@ Behind the scenes features:
   b. Move the item up, to the bottom of the uncompleted part of the list
   c. Remove the strikethrough decoration.
 + Saving the items to a simple JSON on application termination and restore the saved tasks on startup
-- Provide keyboard shortcuts for all the operations stated above.
++ Provide keyboard shortcuts for all the operations stated above.
 
 
 by Oleksii <DarkSpectre> Kshenskyi.

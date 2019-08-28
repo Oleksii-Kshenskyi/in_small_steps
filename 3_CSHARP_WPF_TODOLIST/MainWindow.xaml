@@ -8,6 +8,12 @@
         xmlns:local="clr-namespace:CsharpTodolist"
         mc:Ignorable="d"
         Title="The TO DO list!!!" Margin="10,10,0,13" Height="450" Width="800" Closing="Window_Closing">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MainWindow.AddKeyboardCommand}" Executed="AddTaskButton_Click"/>
+        <CommandBinding Command="{x:Static local:MainWindow.EditKeyboardCommand}" Executed="EditTaskButton_Click"/>
+        <CommandBinding Command="{x:Static local:MainWindow.RemoveKeyboardCommand}" Executed="RemoveTaskButton_Click"/>
+        <CommandBinding Command="{x:Static local:MainWindow.ExitKeyboardCommand}" Executed="ExitCommand_Execute"/>
+    </Window.CommandBindings>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="8*"/>
@@ -54,9 +60,9 @@
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
-                <Button Content="Add" Name="AddTaskButton" Grid.Row="0" Click="AddTaskButton_Click"/>
-                <Button Content="Edit" Name="EditTaskButton" Grid.Row="1" Click="EditTaskButton_Click"/>
-                <Button Content="Remove" Name="RemoveTaskButton" Grid.Row="2" Click="RemoveTaskButton_Click"/>
+                <Button Content="Add (Alt+A)" Name="AddTaskButton" Grid.Row="0" Click="AddTaskButton_Click"/>
+                <Button Content="Edit (Alt+E)" Name="EditTaskButton" Grid.Row="1" Click="EditTaskButton_Click"/>
+                <Button Content="Remove (Alt+R)" Name="RemoveTaskButton" Grid.Row="2" Click="RemoveTaskButton_Click"/>
             </Grid>
         </GroupBox>
     </Grid>
