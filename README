@@ -38,7 +38,7 @@ User Features:
 + User can edit existing items.
 + User can complete items (check the box on a CheckBox).
 + User can uncomplete items (uncheck the box on a CheckBox).
-- Drag and drop items to rearrange their positions.
++ Drag and drop items to rearrange their positions.
 Behind the scenes features:
 + Completing an item should:
   a. Move the item to the bottom of the list
@@ -48,7 +48,7 @@ Behind the scenes features:
   a. Restore the item's color back to black
   b. Move the item up, to the bottom of the uncompleted part of the list
   c. Remove the strikethrough decoration.
-- Saving the items to a simple JSON on application termination and restore the saved tasks on startup
++ Saving the items to a simple JSON on application termination and restore the saved tasks on startup
 - Provide keyboard shortcuts for all the operations stated above.
 
 

@@ -20,7 +20,7 @@ namespace CsharpTodolist
 {
     public partial class MainWindow : Window
     {
-        public ObservableCollection<CheckBoxContentNotifier> TheTasks { get; set; }
+        public ObservableCollection<CheckBoxContentNotifier> TheTasks { get; set; } = new ObservableCollection<CheckBoxContentNotifier>();
 
         public const string PathToSaveFile = "test.json";
 
@@ -28,9 +28,15 @@ namespace CsharpTodolist
 
         private void SerializeTasks()
         {
+            
             if (TheTasks != null)
             {
-                string json = JsonConvert.SerializeObject(TheTasks, Formatting.Indented);
+                SaveData data = new SaveData
+                {
+                    LastUncheckedItemIndex = LastUncheckedItemIndex,
+                    TheTasks = TheTasks
+                };
+                string json = JsonConvert.SerializeObject(data, Formatting.Indented);
                 File.WriteAllText(PathToSaveFile, json);
             }
         }
@@ -40,7 +46,13 @@ namespace CsharpTodolist
             try
             {
                 string file = File.ReadAllText(PathToSaveFile);
-                TheTasks = JsonConvert.DeserializeObject<ObservableCollection<CheckBoxContentNotifier>>(file);
+                SaveData data = JsonConvert.DeserializeObject<SaveData>(file);
+                TheTasks = data.TheTasks;
+                LastUncheckedItemIndex = data.LastUncheckedItemIndex;
+            }
+            catch (FileNotFoundException)
+            {
+
             }
             catch (Exception ex)
             {
