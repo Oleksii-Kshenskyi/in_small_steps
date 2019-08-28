@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace CsharpTodolist
 {
@@ -20,12 +22,38 @@ namespace CsharpTodolist
     {
         public ObservableCollection<CheckBoxContentNotifier> TheTasks { get; set; }
 
+        public const string PathToSaveFile = "test.json";
+
         public static int LastUncheckedItemIndex = -1;
+
+        private void SerializeTasks()
+        {
+            if (TheTasks != null)
+            {
+                string json = JsonConvert.SerializeObject(TheTasks, Formatting.Indented);
+                File.WriteAllText(PathToSaveFile, json);
+            }
+        }
+
+        private void DeserializeTasks()
+        {
+            try
+            {
+                string file = File.ReadAllText(PathToSaveFile);
+                TheTasks = JsonConvert.DeserializeObject<ObservableCollection<CheckBoxContentNotifier>>(file);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Couldn't get the current collection from the save file.\n" +
+                                $"Exception: { ex.Message },\n" +
+                                $"Trace: { ex.StackTrace }.");
+            }
+        }
 
         public MainWindow()
         {
             InitializeComponent();
-            TheTasks = new ObservableCollection<CheckBoxContentNotifier>();
+            DeserializeTasks();
             DataContext = this;
         }
 
@@ -88,6 +116,11 @@ namespace CsharpTodolist
                 LastUncheckedItemIndex++;
                 TheTasks.Move(index, LastUncheckedItemIndex);
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SerializeTasks();
         }
     }
 }
