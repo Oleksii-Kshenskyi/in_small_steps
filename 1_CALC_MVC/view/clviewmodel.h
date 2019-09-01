@@ -14,7 +14,7 @@ class CLViewModel: public QObject
     void eraseOne();
     int getDisplaySize();
   signals:
-    displayValueChanged(QString newValue);
+    void displayValueChanged(QString newValue);
   private:
     QString displayValue;
 };
