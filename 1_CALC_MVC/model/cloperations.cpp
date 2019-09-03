@@ -11,14 +11,14 @@ QString CLIArithmeticOperation::getResult()
     return QString::number(this->model->getResult(), 'g', 22);
 }
 
-void CLIArithmeticOperation::setFirst(const QString& first)
+void CLIArithmeticOperation::setResult(const QString& result)
 {
-    this->model->setFirst(first.toDouble());
+    this->model->setResult(result.toDouble());
 }
 
-void CLIArithmeticOperation::setSecond(const QString& second)
+void CLIArithmeticOperation::setDelta(const QString& delta)
 {
-    this->model->setSecond(second.toDouble());
+    this->model->setDelta(delta.toDouble());
 }
 
 CLOAddition::CLOAddition(std::shared_ptr<CLModel> newModel) : CLIArithmeticOperation(newModel)
@@ -43,20 +43,20 @@ CLODivision::CLODivision(std::shared_ptr<CLModel> newModel) : CLIArithmeticOpera
 
 void CLOAddition::execute()
 {
-    this->model->setResult(this->model->getFirst() + this->model->getSecond());
+    this->model->setResult(this->model->getResult() + this->model->getDelta());
 }
 
 void CLOSubstraction::execute()
 {
-    this->model->setResult(this->model->getFirst() - this->model->getSecond());
+    this->model->setResult(this->model->getResult() - this->model->getDelta());
 }
 
 void CLOMultiplication::execute()
 {
-    this->model->setResult(this->model->getFirst() * this->model->getSecond());
+    this->model->setResult(this->model->getResult() * this->model->getDelta());
 }
 
 void CLODivision::execute()
 {
-    this->model->setResult(this->model->getFirst() / this->model->getSecond());
+    this->model->setResult(this->model->getResult() / this->model->getDelta());
 }

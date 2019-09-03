@@ -9,10 +9,8 @@ class CLModel
   public:
     CLModel();
 
-    double getFirst();
-    void setFirst(double newFirst);
-    double getSecond();
-    void setSecond(double newSecond);
+    double getDelta();
+    void setDelta(double newDelta);
     void setResult(double newResult);
     double getResult();
 
