@@ -5,7 +5,6 @@ CLOverlordController::CLOverlordController(QObject* root, std::shared_ptr<QQuick
 {
     QObject::connect(this->view.get(), &CLView::operationClicked, this, &CLOverlordController::createOperation);
     QObject::connect(this->view.get(), &CLView::equalsSignClicked, this, &CLOverlordController::processOperation);
-
 }
 
 void CLOverlordController::createOperation(const QString& operation)
