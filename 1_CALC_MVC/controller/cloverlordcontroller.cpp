@@ -19,7 +19,9 @@ void CLOverlordController::processOperation()
 {
     if(this->operation)
     {
-        this->operation->setDelta(this->view->getModelText());
+        if(this->view->getLastPress() == CLButtonType::Number || this->view->getLastPress() == CLButtonType::Operation)
+            this->operation->setDelta(this->view->getModelText());
+
         this->operation->execute();
         this->view->setModelText(this->operation->getResult());
 
