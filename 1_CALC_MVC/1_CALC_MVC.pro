@@ -43,6 +43,8 @@ HEADERS += \
     model/clmodeldata.h \
     model/cloperations.h \
     model/clmodel.h \
+    view/clbuttontype.h \
+    view/clfixedqueue.h \
     view/clview.h \
     view/clqmlconnector.h \
     view/clviewmodel.h \

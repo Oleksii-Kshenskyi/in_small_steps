@@ -2,37 +2,26 @@
 
 CLModel::CLModel()
 {
-    this->data.setFirst(0);
-    this->data.setSecond(0);
-    this->data.setResult(0);
+    this->data.delta = 0;
+    this->data.result = 0;
 }
 
-double CLModel::getFirst()
+double CLModel::getDelta()
 {
-    return this->data.getFirst();
+    return this->data.delta;
 }
 
-void CLModel::setFirst(double newFirst)
+void CLModel::setDelta(double newDelta)
 {
-    this->data.setFirst(newFirst);
-}
-
-double CLModel::getSecond()
-{
-    return this->data.getSecond();
-}
-
-void CLModel::setSecond(double newSecond)
-{
-    this->data.setSecond(newSecond);
-}
-
-void CLModel::setResult(double newResult)
-{
-    this->data.setResult(newResult);
+    this->data.delta = newDelta;
 }
 
 double CLModel::getResult()
 {
-    return this->data.getResult();
+    return this->data.result;
+}
+
+void CLModel::setResult(double newResult)
+{
+    this->data.result = newResult;
 }

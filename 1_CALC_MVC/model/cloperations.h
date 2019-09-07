@@ -12,8 +12,8 @@ class CLIArithmeticOperation
     virtual ~CLIArithmeticOperation() = default;
 
     QString getResult();
-    void setFirst(const QString& first);
-    void setSecond(const QString& second);
+    void setResult(const QString& result);
+    void setDelta(const QString& delta);
     virtual void execute() = 0;
   protected:
     std::shared_ptr<CLModel> model;
