@@ -9,6 +9,9 @@ CLOverlordController::CLOverlordController(QObject* root, std::shared_ptr<QQuick
 
 void CLOverlordController::createOperation(const QString& operation)
 {
+    if(this->operation && this->view->getLastPress() == CLButtonType::Number)
+        this->processOperation();
+
     this->operation = this->factory->create(operation);
     this->operation->setResult(this->view->getModelText());
 
