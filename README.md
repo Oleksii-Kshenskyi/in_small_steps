@@ -1,4 +1,4 @@
-# in_small_steps
+# In Small Steps practice repository
 Teaching myself programming in small steps. Each folder should be a FINISHED small project.
 
 WHAT IS THIS?
@@ -16,9 +16,9 @@ Nothing fancy is expected here. Do this in MVC, follow SOLID/DRY where/if it mak
 When a change to the calculator is made, increment the 3rd number. When some feature is done, increment the 2nd number. When the whole project is done,
 increment the 1st number.
 TO DO:
-  - = sign works, but the sequence is incorrect. It should:
+  + = sign works, but the sequence is incorrect. It should:
     a. Always perform the last operation available on the second operand;
-  - Operations buttons work, but one nuance is left:
+  + Operations buttons work, but one nuance is left:
     a. An operation button should push current input into result if pressed for the second time or more (but only once, after that it's just choosing an operation again);
   - The "C" button should become "CE" as its current function is clearing the current input on display, which is done by the "CE" button;
   - The "CA" button should become the "C" button instead, and it should be implemented. It clears everything;
