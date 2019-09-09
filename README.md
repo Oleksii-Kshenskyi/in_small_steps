@@ -21,7 +21,7 @@ increment the 1st number.
     a. Always perform the last operation available on the second operand;
   + **(DONE)** Operations buttons work, but one nuance is left:
     a. An operation button should push current input into result if pressed for the second time or more (but only once, after that it's just choosing an operation again);
-  - The "C" button should become "CE" as its current function is clearing the current input on display, which is done by the "CE" button;
+  - **(DONE)** The "C" button should become "CE" as its current function is clearing the current input on display, which is done by the "CE" button;
   - The "CA" button should become the "C" button instead, and it should be implemented. It clears everything;
   - Introduce the floating point logic;
   - Implement keyboard key bindings for all the buttons.
