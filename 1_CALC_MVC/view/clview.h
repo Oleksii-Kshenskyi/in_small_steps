@@ -34,7 +34,7 @@ private:
 private slots:
     void setQmlText(const QString& newText);
     void changeModelTextForDelta(const QString& deltaText);
-    void resetQmlDisplay();
+    void clearEntry();
     void eraseOne();
 };
 

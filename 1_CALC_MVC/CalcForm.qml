@@ -18,7 +18,7 @@ Item {
     property alias mainDisplayLength: teMainNumericDisplay.maximumLength
     signal numberClicked(string number);
     signal offClicked();
-    signal cancelClicked();
+    signal clearEntryClicked();
     signal eraseOneClicked();
     signal operationClicked(string operation);
     signal equalsSignClicked();
@@ -63,16 +63,16 @@ Item {
         }
 
         Button {
-            id: btCancelOperand
+            id: btClearEntry
             y: 0
             Layout.row: 1
             Layout.column: 0
             width: height
-            text: qsTr("C")
+            text: qsTr("CE")
             font.pointSize: 24
             highlighted: false
 
-            onClicked: cancelClicked();
+            onClicked: clearEntryClicked();
 
         }
 

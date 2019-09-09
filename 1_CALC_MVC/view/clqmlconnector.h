@@ -17,7 +17,7 @@ public:
     int getQmlMainDisplayLength();
 signals:
     void changeModelTextForDelta(const QString& deltaText);
-    void resetQmlMainDisplay();
+    void clearEntryClicked();
     void eraseOne();
     void operationClicked(const QString& operation);
     void equalsSignClicked();

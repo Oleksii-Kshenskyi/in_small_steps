@@ -11,7 +11,7 @@ CLView::CLView(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(roo
 
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::changeModelTextForDelta, this, &CLView::changeModelTextForDelta);
    QObject::connect(this->model.get(), &CLViewModel::displayValueChanged, this, &CLView::setQmlText);
-   QObject::connect(this->qmlConnector.get(), &CLQmlConnector::resetQmlMainDisplay, this, &CLView::resetQmlDisplay);
+   QObject::connect(this->qmlConnector.get(), &CLQmlConnector::clearEntryClicked, this, &CLView::clearEntry);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::eraseOne, this, &CLView::eraseOne);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::operationClicked, this, &CLView::operationClicked);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::equalsSignClicked, this, &CLView::equalsSignClicked);
@@ -64,7 +64,7 @@ void CLView::setQmlText(const QString& newText)
     this->qmlConnector->setQmlMainDisplayText(newText);
 }
 
-void CLView::resetQmlDisplay()
+void CLView::clearEntry()
 {
     this->model->setDisplayValue("0");
 }
