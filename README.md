@@ -25,6 +25,7 @@ increment the 1st number.
   - The "CA" button should become the "C" button instead, and it should be implemented. It clears everything;
   - Introduce the floating point logic;
   - Implement keyboard key bindings for all the buttons.
+  - **POSSIBLE BUG:** When you press CE and then /, the MS calculator throws the "cannot divide by zero" exception. This calculator currently just ignores it and continues the expression calculation without it. Have to find why the behaviors are different.
 
 ## 2 - Effective Modern Cpp
 This is a project created for the purpose of learning stuff from said book. Try to create a small program for each item to use it the way the book
