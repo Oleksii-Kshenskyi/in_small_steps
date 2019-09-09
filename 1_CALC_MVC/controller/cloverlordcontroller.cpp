@@ -5,6 +5,7 @@ CLOverlordController::CLOverlordController(QObject* root, std::shared_ptr<QQuick
 {
     QObject::connect(this->view.get(), &CLView::operationClicked, this, &CLOverlordController::createOperation);
     QObject::connect(this->view.get(), &CLView::equalsSignClicked, this, &CLOverlordController::processOperation);
+    QObject::connect(this->view.get(), &CLView::clearEntryClicked, this, &CLOverlordController::clearEntry);
 }
 
 void CLOverlordController::createOperation(const QString& operation)
@@ -30,4 +31,9 @@ void CLOverlordController::processOperation()
 
         this->view->clearLater();
     }
+}
+
+void CLOverlordController::clearEntry()
+{
+    this->view->setModelText("0");
 }
