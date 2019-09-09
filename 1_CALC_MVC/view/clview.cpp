@@ -11,7 +11,7 @@ CLView::CLView(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(roo
 
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::changeModelTextForDelta, this, &CLView::changeModelTextForDelta);
    QObject::connect(this->model.get(), &CLViewModel::displayValueChanged, this, &CLView::setQmlText);
-   QObject::connect(this->qmlConnector.get(), &CLQmlConnector::clearEntryClicked, this, &CLView::clearEntry);
+   QObject::connect(this->qmlConnector.get(), &CLQmlConnector::clearEntryClicked, this, &CLView::clearEntryClicked);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::eraseOne, this, &CLView::eraseOne);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::operationClicked, this, &CLView::operationClicked);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::equalsSignClicked, this, &CLView::equalsSignClicked);
@@ -27,6 +27,11 @@ void CLView::setLastPress(const CLButtonType& lastPress)
 }
 
 const CLButtonType& CLView::getLastPress()
+{
+    return this->lastPress.back();
+}
+
+const CLButtonType& CLView::getPreviousPress()
 {
     return this->lastPress.front();
 }
@@ -62,11 +67,6 @@ void CLView::changeModelTextForDelta(const QString &deltaText)
 void CLView::setQmlText(const QString& newText)
 {
     this->qmlConnector->setQmlMainDisplayText(newText);
-}
-
-void CLView::clearEntry()
-{
-    this->model->setDisplayValue("0");
 }
 
 void CLView::eraseOne()

@@ -15,10 +15,13 @@ public:
     CLView(QObject* root, std::shared_ptr<QQuickView> mainView);
     QString getModelText();
     void clearLater();
+
     const CLButtonType& getLastPress();
+    const CLButtonType& getPreviousPress();
 signals:
     void operationClicked(const QString& operation);
     void equalsSignClicked();
+    void clearEntryClicked();
     void lastPressChanged(const CLButtonType& lastPress);
 public slots:
     void setModelText(const QString& newText);
@@ -34,7 +37,6 @@ private:
 private slots:
     void setQmlText(const QString& newText);
     void changeModelTextForDelta(const QString& deltaText);
-    void clearEntry();
     void eraseOne();
 };
 
