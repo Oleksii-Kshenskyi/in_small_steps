@@ -36,4 +36,7 @@ void CLOverlordController::processOperation()
 void CLOverlordController::clearEntry()
 {
     this->view->setModelText("0");
+
+    if(this->view->getLastPress() == CLButtonType::Equals)
+        this->operation->setResult("0");
 }
