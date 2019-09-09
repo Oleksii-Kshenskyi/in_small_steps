@@ -28,6 +28,11 @@ void CLView::setLastPress(const CLButtonType& lastPress)
 
 const CLButtonType& CLView::getLastPress()
 {
+    return this->lastPress.back();
+}
+
+const CLButtonType& CLView::getPreviousPress()
+{
     return this->lastPress.front();
 }
 

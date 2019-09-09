@@ -15,7 +15,9 @@ public:
     CLView(QObject* root, std::shared_ptr<QQuickView> mainView);
     QString getModelText();
     void clearLater();
+
     const CLButtonType& getLastPress();
+    const CLButtonType& getPreviousPress();
 signals:
     void operationClicked(const QString& operation);
     void equalsSignClicked();

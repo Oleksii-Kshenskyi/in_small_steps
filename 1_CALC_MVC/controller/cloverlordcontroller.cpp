@@ -10,7 +10,7 @@ CLOverlordController::CLOverlordController(QObject* root, std::shared_ptr<QQuick
 
 void CLOverlordController::createOperation(const QString& operation)
 {
-    if(this->operation && this->view->getLastPress() == CLButtonType::Number)
+    if(this->operation && this->view->getPreviousPress() == CLButtonType::Number)
         this->processOperation();
 
     this->operation = this->factory->create(operation);
@@ -23,7 +23,7 @@ void CLOverlordController::processOperation()
 {
     if(this->operation)
     {
-        if(this->view->getLastPress() == CLButtonType::Number || this->view->getLastPress() == CLButtonType::Operation)
+        if(this->view->getPreviousPress() == CLButtonType::Number || this->view->getPreviousPress() == CLButtonType::Operation)
             this->operation->setDelta(this->view->getModelText());
 
         this->operation->execute();
