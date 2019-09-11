@@ -18,6 +18,7 @@ public:
 signals:
     void changeModelTextForDelta(const QString& deltaText);
     void clearEntryClicked();
+    void clearAllClicked();
     void eraseOne();
     void operationClicked(const QString& operation);
     void equalsSignClicked();

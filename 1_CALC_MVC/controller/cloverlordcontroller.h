@@ -17,6 +17,7 @@ class CLOverlordController: public QObject
     void createOperation(const QString& operation);
     void processOperation();
     void clearEntry();
+    void clearAll();
 
   private:
     std::shared_ptr<CLIArithmeticOperation> operation;

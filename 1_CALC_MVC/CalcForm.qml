@@ -19,6 +19,7 @@ Item {
     signal numberClicked(string number);
     signal offClicked();
     signal clearEntryClicked();
+    signal clearAllClicked();
     signal eraseOneClicked();
     signal operationClicked(string operation);
     signal equalsSignClicked();
@@ -77,7 +78,7 @@ Item {
         }
 
         Button {
-            id: btCancelAll
+            id: btClearAll
             y: 0
             Layout.row: 1
             Layout.column: 1
@@ -85,6 +86,8 @@ Item {
             text: qsTr("CA")
             font.pointSize: 24
             highlighted: false
+
+            onClicked: clearAllClicked();
 
         }
 

@@ -22,6 +22,7 @@ signals:
     void operationClicked(const QString& operation);
     void equalsSignClicked();
     void clearEntryClicked();
+    void clearAllClicked();
     void lastPressChanged(const CLButtonType& lastPress);
 public slots:
     void setModelText(const QString& newText);
