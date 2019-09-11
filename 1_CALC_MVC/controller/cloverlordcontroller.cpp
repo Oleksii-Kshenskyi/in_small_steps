@@ -6,6 +6,7 @@ CLOverlordController::CLOverlordController(QObject* root, std::shared_ptr<QQuick
     QObject::connect(this->view.get(), &CLView::operationClicked, this, &CLOverlordController::createOperation);
     QObject::connect(this->view.get(), &CLView::equalsSignClicked, this, &CLOverlordController::processOperation);
     QObject::connect(this->view.get(), &CLView::clearEntryClicked, this, &CLOverlordController::clearEntry);
+    QObject::connect(this->view.get(), &CLView::clearAllClicked, this, &CLOverlordController::clearAll);
 }
 
 void CLOverlordController::createOperation(const QString& operation)
@@ -39,4 +40,11 @@ void CLOverlordController::clearEntry()
 
     if(this->view->getLastPress() == CLButtonType::Equals)
         this->operation->setResult("0");
+}
+
+void CLOverlordController::clearAll()
+{
+    this->operation.reset();
+    this->view->setModelText("0");
+    this->view->setLastPress(CLButtonType::Nothing);
 }

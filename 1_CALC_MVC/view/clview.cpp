@@ -12,6 +12,7 @@ CLView::CLView(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(roo
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::changeModelTextForDelta, this, &CLView::changeModelTextForDelta);
    QObject::connect(this->model.get(), &CLViewModel::displayValueChanged, this, &CLView::setQmlText);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::clearEntryClicked, this, &CLView::clearEntryClicked);
+   QObject::connect(this->qmlConnector.get(), &CLQmlConnector::clearAllClicked, this, &CLView::clearAllClicked);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::eraseOne, this, &CLView::eraseOne);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::operationClicked, this, &CLView::operationClicked);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::equalsSignClicked, this, &CLView::equalsSignClicked);
