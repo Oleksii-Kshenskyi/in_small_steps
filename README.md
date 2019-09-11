@@ -21,8 +21,8 @@ increment the 1st number.
     a. Always perform the last operation available on the second operand;
   + **(DONE)** Operations buttons work, but one nuance is left:
     a. An operation button should push current input into result if pressed for the second time or more (but only once, after that it's just choosing an operation again);
-  - **(DONE)** The "C" button should become "CE" as its current function is clearing the current input on display, which is done by the "CE" button;
-  - The "CA" button should become the "C" button instead, and it should be implemented. It clears everything;
+  - **(DONE)** The "C" button should become "CE" (Clear Entry) as its current function is clearing the current input on display, which is usually done by the "CE" button;
+  - **(DONE)** The "CA" button (Clear All) should be implemented. It clears everything;
   - Introduce the floating point logic;
   - Implement keyboard key bindings for all the buttons.
   - **POSSIBLE BUG:** When you press CE and then /, the MS calculator throws the "cannot divide by zero" exception. This calculator currently just ignores it and continues the expression calculation without it. Have to find why the behaviors are different.
