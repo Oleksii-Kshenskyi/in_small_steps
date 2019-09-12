@@ -16,6 +16,7 @@ CLView::CLView(QObject *root, std::shared_ptr<QQuickView> mainView): QObject(roo
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::eraseOne, this, &CLView::eraseOne);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::operationClicked, this, &CLView::operationClicked);
    QObject::connect(this->qmlConnector.get(), &CLQmlConnector::equalsSignClicked, this, &CLView::equalsSignClicked);
+   QObject::connect(this->qmlConnector.get(), &CLQmlConnector::dotClicked, this, &CLView::processDot);
 
    QObject::connect(this, &CLView::lastPressChanged, this, &CLView::setLastPress);
    QObject::connect(this, &CLView::equalsSignClicked, this, &CLView::setLastPressToEquals);
@@ -91,4 +92,22 @@ QString CLView::getModelText()
 void CLView::clearLater()
 {
     this->clearNext = true;
+}
+
+void CLView::processDot()
+{
+    auto lastPress = this->getLastPress();
+    if(lastPress == CLButtonType::Operation || lastPress == CLButtonType::Equals || lastPress == CLButtonType::Nothing)
+    {
+        if(this->getLastPress() == CLButtonType::Equals)
+            emit this->clearAllClicked();
+
+        this->setLastPress(CLButtonType::Number);
+        this->model->setDisplayValue("0.");
+        this->clearNext = false;
+    }
+
+    auto modelStr = this->model->getDisplayValue();
+    if(!modelStr.contains("."))
+        this->model->setDisplayValue(modelStr + ".");
 }

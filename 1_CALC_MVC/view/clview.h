@@ -26,6 +26,7 @@ signals:
     void lastPressChanged(const CLButtonType& lastPress);
 public slots:
     void setModelText(const QString& newText);
+    void processDot();
 
     void setLastPress(const CLButtonType& lastPress);
     void setLastPressToEquals();
