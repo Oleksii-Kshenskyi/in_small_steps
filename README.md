@@ -23,7 +23,10 @@ increment the 1st number.
     a. An operation button should push current input into result if pressed for the second time or more (but only once, after that it's just choosing an operation again);
   - **(DONE)** The "C" button should become "CE" (Clear Entry) as its current function is clearing the current input on display, which is usually done by the "CE" button;
   - **(DONE)** The "CA" button (Clear All) should be implemented. It clears everything;
-  - Introduce the floating point logic;
+  - Introduce the floating point logic:
+    a. '.' should only be pressable *once* per number;
+    b. App should not crash and not lose the number if a '.' is the *last symbol* of the number;
+    c. '.' pressed after 0 should be '0.', not '.'.
   - Implement keyboard key bindings for all the buttons.
   - **POSSIBLE BUG:** When you press CE and then /, the MS calculator throws the "cannot divide by zero" exception. This calculator currently just ignores it and continues the expression calculation without it. Have to find why the behaviors are different.
 
