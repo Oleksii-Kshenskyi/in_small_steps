@@ -8,7 +8,7 @@ CLIArithmeticOperation::CLIArithmeticOperation(std::shared_ptr<CLModel> newModel
 
 QString CLIArithmeticOperation::getResult()
 {
-    return QString::number(this->model->getResult(), 'g', 22);
+    return QString::number(this->model->getResult());
 }
 
 void CLIArithmeticOperation::setResult(const QString& result)

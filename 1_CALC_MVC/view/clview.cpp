@@ -96,5 +96,18 @@ void CLView::clearLater()
 
 void CLView::processDot()
 {
-    this->model->setDisplayValue(this->model->getDisplayValue() + ".");
+    auto lastPress = this->getLastPress();
+    if(lastPress == CLButtonType::Operation || lastPress == CLButtonType::Equals || lastPress == CLButtonType::Nothing)
+    {
+        if(this->getLastPress() == CLButtonType::Equals)
+            emit this->clearAllClicked();
+
+        this->setLastPress(CLButtonType::Number);
+        this->model->setDisplayValue("0.");
+        this->clearNext = false;
+    }
+
+    auto modelStr = this->model->getDisplayValue();
+    if(!modelStr.contains("."))
+        this->model->setDisplayValue(modelStr + ".");
 }
