@@ -34,6 +34,8 @@ increment the 1st number.
   - **POSSIBLE REFACTOR:** Try to find a way to pack all keyboard bindings for numbers into one entity without code duplication (may not be possible, repeater doesn't work);
   - **REFACTOR:** Pack all operation buttons into one repeater (possibly their shortcuts too);
   - Add labels/tips with notifications for upper line control button shortcuts.
+  - **REFACTOR:** Prettify the code. Currently only includes the most obvious refactors like the QObject compiler warning and the above-mentioned QML refactors. Also the formatting of the curly braces in the QML file is inconsistent;
+  - **ANALYSIS:** Analyze what else can be refactored codewise.
 
 ## 2 - Effective Modern Cpp
 This is a project created for the purpose of learning stuff from said book. Try to create a small program for each item to use it the way the book
