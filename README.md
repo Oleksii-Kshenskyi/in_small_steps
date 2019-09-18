@@ -27,10 +27,13 @@ increment the 1st number.
     a. '.' should only be pressable *once* per number;
     b. App should not crash and not lose the number if a '.' is the *last symbol* of the number;
     c. '.' pressed after 0 should be '0.', not '.'.
-  - Implement keyboard key bindings for all the buttons.
+  - **(DONE)** Implement keyboard key bindings for all the buttons.
   - **POSSIBLE BUG:** When you press CE and then /, the MS calculator throws the "cannot divide by zero" exception. This calculator currently just ignores it and continues the expression calculation without it. Have to find why the behaviors are different.
   - **BUG:** If you input a number of max precision (currently 13/26), the application sequencing breaks. Needs additional investigation;
   - **BUG:** Floating point logic has been implemented, but the precision on the floating point values is wonky. Currently the display shows values with the smallest possible precision, that's why display values are not always displayed with the necessary precision value.
+  - **POSSIBLE REFACTOR:** Try to find a way to pack all keyboard bindings for numbers into one entity without code duplication (may not be possible, repeater doesn't work);
+  - **REFACTOR:** Pack all operation buttons into one repeater (possibly their shortcuts too);
+  - Add labels/tips with notifications for upper line control button shortcuts.
 
 ## 2 - Effective Modern Cpp
 This is a project created for the purpose of learning stuff from said book. Try to create a small program for each item to use it the way the book
