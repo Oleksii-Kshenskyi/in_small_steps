@@ -1,8 +1,8 @@
-import QtQuick 2.7
-import QtQuick.Controls 2.2
-import QtQuick.Window 2.3
-import QtQuick.Controls.Material 2.2
-import QtQuick.Layouts 1.3
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+import QtQuick.Window 2.12
+import QtQuick.Controls.Material 2.12
+import QtQuick.Layouts 1.12
 import Qt.labs.calendar 1.0
 import QtQuick.Controls.Styles 1.4
 
@@ -33,6 +33,56 @@ Item {
     function setDisplayText(newText)
     {
         teMainNumericDisplay.setText(newText);
+    }
+
+    Shortcut {
+        sequence: "0"
+        onActivated: numberClicked("0")
+    }
+
+    Shortcut {
+        sequence: "1"
+        onActivated: numberClicked("1")
+    }
+
+    Shortcut {
+        sequence: "2"
+        onActivated: numberClicked("2")
+    }
+
+    Shortcut {
+        sequence: "3"
+        onActivated: numberClicked("3")
+    }
+
+    Shortcut {
+        sequence: "4"
+        onActivated: numberClicked("4")
+    }
+
+    Shortcut {
+        sequence: "5"
+        onActivated: numberClicked("5")
+    }
+
+    Shortcut {
+        sequence: "6"
+        onActivated: numberClicked("6")
+    }
+
+    Shortcut {
+        sequence: "7"
+        onActivated: numberClicked("7")
+    }
+
+    Shortcut {
+        sequence: "8"
+        onActivated: numberClicked("8")
+    }
+
+    Shortcut {
+        sequence: "9"
+        onActivated: numberClicked("9")
     }
 
     GridLayout {
@@ -76,6 +126,11 @@ Item {
 
             onClicked: clearEntryClicked();
 
+            Shortcut {
+                sequence: "Ctrl+E"
+                onActivated: clearEntryClicked()
+            }
+
         }
 
         Button {
@@ -89,6 +144,11 @@ Item {
             highlighted: false
 
             onClicked: clearAllClicked();
+
+            Shortcut {
+                sequence: "Ctrl+A"
+                onActivated: clearAllClicked()
+            }
 
         }
 
@@ -104,6 +164,11 @@ Item {
 
             onClicked: eraseOneClicked();
 
+            Shortcut {
+                sequence: "Backspace"
+                onActivated: eraseOneClicked()
+            }
+
         }
 
         Button {
@@ -117,6 +182,11 @@ Item {
             highlighted: false
 
             onClicked: offClicked();
+
+            Shortcut {
+                sequence: "ESC"
+                onActivated: offClicked()
+            }
         }
 
         Repeater
@@ -166,6 +236,11 @@ Item {
             font.pointSize: 24
 
             onClicked: dotClicked();
+
+            Shortcut {
+                sequence: "."
+                onActivated: dotClicked()
+            }
         }
 
         Button
@@ -180,6 +255,11 @@ Item {
             font.pointSize: 24
 
             onClicked: equalsSignClicked();
+
+            Shortcut {
+                sequences: ["=", "Enter"]
+                onActivated: equalsSignClicked()
+            }
         }
 
         Button
@@ -194,6 +274,11 @@ Item {
             font.pointSize: 24
 
             onClicked: operationClicked("add");
+
+            Shortcut {
+                sequence: "+"
+                onActivated: operationClicked("add")
+            }
         }
 
         Button
@@ -208,6 +293,11 @@ Item {
             font.pointSize: 24
 
             onClicked: operationClicked("sub");
+
+            Shortcut {
+                sequence: "-"
+                onActivated: operationClicked("sub")
+            }
         }
 
         Button
@@ -222,6 +312,11 @@ Item {
             font.pointSize: 24
 
             onClicked: operationClicked("mul");
+
+            Shortcut {
+                sequence: "*"
+                onActivated: operationClicked("mul")
+            }
         }
 
         Button
@@ -236,6 +331,11 @@ Item {
             font.pointSize: 24
 
             onClicked: operationClicked("div");
+
+            Shortcut {
+                sequence: "/"
+                onActivated: operationClicked("div")
+            }
         }
     }
 }
