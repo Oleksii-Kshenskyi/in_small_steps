@@ -273,7 +273,7 @@ Item {
             highlighted: false
             font.pointSize: 24
 
-            onClicked: operationClicked("add");
+            onClicked: operationClicked(text);
 
         }
 
@@ -288,7 +288,7 @@ Item {
             highlighted: false
             font.pointSize: 24
 
-            onClicked: operationClicked("sub");
+            onClicked: operationClicked(text);
 
         }
 
@@ -303,7 +303,7 @@ Item {
             highlighted: false
             font.pointSize: 24
 
-            onClicked: operationClicked("mul");
+            onClicked: operationClicked(text);
 
         }
 
@@ -318,28 +318,28 @@ Item {
             highlighted: false
             font.pointSize: 24
 
-            onClicked: operationClicked("div");
+            onClicked: operationClicked(text);
 
         }
 
         Shortcut {
             sequence: "+"
-            onActivated: operationClicked("add")
+            onActivated: operationClicked(sequence)
         }
 
         Shortcut {
             sequence: "-"
-            onActivated: operationClicked("sub")
+            onActivated: operationClicked(sequence)
         }
 
         Shortcut {
             sequence: "*"
-            onActivated: operationClicked("mul")
+            onActivated: operationClicked(sequence)
         }
 
         Shortcut {
             sequence: "/"
-            onActivated: operationClicked("div")
+            onActivated: operationClicked(sequence)
         }
     }
 }

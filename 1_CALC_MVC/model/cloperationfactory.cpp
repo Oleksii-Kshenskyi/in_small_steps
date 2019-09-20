@@ -1,10 +1,10 @@
 #include "cloperationfactory.h"
 
 
-CLOperationFactory::CLOperationFactory(std::shared_ptr<CLModel> model): model(model), functions {{"add", &CLOperationFactory::createAdd},
-                                                                                                 {"sub", &CLOperationFactory::createSub},
-                                                                                                 {"mul", &CLOperationFactory::createMul},
-                                                                                                 {"div", &CLOperationFactory::createDiv}}
+CLOperationFactory::CLOperationFactory(std::shared_ptr<CLModel> model): model(model), functions {{"+", &CLOperationFactory::createAdd},
+                                                                                                 {"-", &CLOperationFactory::createSub},
+                                                                                                 {"*", &CLOperationFactory::createMul},
+                                                                                                 {"/", &CLOperationFactory::createDiv}}
 {
 
 }
