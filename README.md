@@ -32,7 +32,7 @@ increment the 1st number.
   - **(FIXED)** If you input a max digit number (currently 26), the application sequencing breaks. Needs additional investigation;
   - **BUG:** Floating point logic has been implemented, but the precision on the floating point values is wonky. Currently the display shows values with the smallest possible precision, that's why display values are not always displayed with the necessary precision value.
   - **POSSIBLE REFACTOR:** Try to find a way to pack all keyboard bindings for numbers into one entity without code duplication (may not be possible, repeater doesn't work);
-  - **REFACTOR:** Pack all operation buttons into one repeater (possibly their shortcuts too);
+  - **(REFACTORED)** Pack all operation buttons into one repeater (and their shortcuts too);
   - Add labels/tips with notifications for upper line control button shortcuts.
   - **REFACTOR:** Prettify the code. Currently only includes the most obvious refactors like the QObject compiler warning and the above-mentioned QML refactors. Also the formatting of the curly braces in the QML file is inconsistent;
   - **ANALYSIS:** Analyze what else can be refactored codewise.

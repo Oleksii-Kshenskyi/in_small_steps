@@ -35,6 +35,12 @@ Item {
         teMainNumericDisplay.setText(newText);
     }
 
+    function getOperation(index)
+    {
+        var op = ["+", "-", "*", "/"];
+        return op[index];
+    }
+
     Shortcut {
         sequence: "0"
         onActivated: numberClicked("0")
@@ -262,80 +268,26 @@ Item {
             }
         }
 
-        Button
-        {
-            id: btOperationPlus
-            width: height
-            Layout.row: 2
-            Layout.column: 3
+        Repeater {
+            model: 4
 
-            text: qsTr("+")
-            highlighted: false
-            font.pointSize: 24
+            Button {
+                width: height
+                Layout.row: 2 + index
+                Layout.column: 3
 
-            onClicked: operationClicked("add");
+                text: getOperation(index)
+                highlighted: false
+                font.pointSize: 24
 
-            Shortcut {
-                sequence: "+"
-                onActivated: operationClicked("add")
+                onClicked: operationClicked(getOperation(index))
+
+                Shortcut {
+                    sequence: getOperation(index)
+                    onActivated: operationClicked(sequence)
+                }
             }
         }
 
-        Button
-        {
-            id: btOperationMinus
-            width: height
-            Layout.row: 3
-            Layout.column: 3
-
-            text: qsTr("-")
-            highlighted: false
-            font.pointSize: 24
-
-            onClicked: operationClicked("sub");
-
-            Shortcut {
-                sequence: "-"
-                onActivated: operationClicked("sub")
-            }
-        }
-
-        Button
-        {
-            id: btOperationMultiply
-            width: height
-            Layout.row: 4
-            Layout.column: 3
-
-            text: qsTr("*")
-            highlighted: false
-            font.pointSize: 24
-
-            onClicked: operationClicked("mul");
-
-            Shortcut {
-                sequence: "*"
-                onActivated: operationClicked("mul")
-            }
-        }
-
-        Button
-        {
-            id: btOperationDivide
-            width: height
-            Layout.row: 5
-            Layout.column: 3
-
-            text: qsTr("/")
-            highlighted: false
-            font.pointSize: 24
-
-            onClicked: operationClicked("div");
-
-            Shortcut {
-                sequence: "/"
-                onActivated: operationClicked("div")
-            }
-        }
     }
 }
