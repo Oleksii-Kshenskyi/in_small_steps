@@ -29,7 +29,7 @@ increment the 1st number.
     c. '.' pressed after 0 should be '0.', not '.'.
   - **(DONE)** Implement keyboard key bindings for all the buttons.
   - **(NOT REPRODUCIBLE)** When you press CE and then /, the MS calculator throws the "cannot divide by zero" exception. This calculator currently just ignores it and continues the expression calculation without it. Have to find why the behaviors are different. (either this has been fixed impilicitly or this has never been a bug in the first place. Right now this is not reproducible.)
-  - **BUG:** If you input a number of max precision (currently 13/26), the application sequencing breaks. Needs additional investigation;
+  - **(FIXED)** If you input a max digit number (currently 26), the application sequencing breaks. Needs additional investigation;
   - **BUG:** Floating point logic has been implemented, but the precision on the floating point values is wonky. Currently the display shows values with the smallest possible precision, that's why display values are not always displayed with the necessary precision value.
   - **POSSIBLE REFACTOR:** Try to find a way to pack all keyboard bindings for numbers into one entity without code duplication (may not be possible, repeater doesn't work);
   - **REFACTOR:** Pack all operation buttons into one repeater (possibly their shortcuts too);

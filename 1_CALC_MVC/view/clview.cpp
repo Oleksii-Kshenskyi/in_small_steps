@@ -50,16 +50,18 @@ void CLView::setLastPressToOperation()
 
 
 /**
- * @brief CLView::changeModelTextForDelta(const QString&) changes display text according to the number pressed.
- * The function restricts user input to 13 numbers, becauase maximum display length is 26 (in case of
- * multiplication the number's length may double). Also it appends the string with the number, but
- * if number is 0, it substitutes this 0 with the number instead (to avoid numbers like 038).
- * @param deltaText - the delta (appending number) string that has to be attached to the display.
+ * @brief CLView::changeModelTextForDelta(const QString&) changes display text according to the digit pressed.
+ * The method appends the string with a delta digit, but if the digit is 0, it substitutes this 0 with the digit
+ * button just pressed instead (to avoid numbers like 038).
+ * @param deltaText - the delta string that has to be appended to the displayed number.
  */
 void CLView::changeModelTextForDelta(const QString &deltaText)
 {
-    if( (this->model->getDisplaySize() + deltaText.size()) <= (this->qmlConnector->getQmlMainDisplayLength() / 2))
-      this->model->setDisplayValue( ((this->model->getDisplayValue() == "0") || this->clearNext) ? deltaText : this->model->getDisplayValue() + deltaText);
+    if((this->model->getDisplaySize() + deltaText.size() > qmlConnector->getQmlMainDisplayLength()) &&
+            !this->clearNext)
+        return;
+
+    this->model->setDisplayValue( ((this->model->getDisplayValue() == "0") || this->clearNext) ? deltaText : this->model->getDisplayValue() + deltaText);
 
     this->clearNext = false;
 
