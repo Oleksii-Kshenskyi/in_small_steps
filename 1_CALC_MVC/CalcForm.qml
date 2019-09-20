@@ -275,10 +275,6 @@ Item {
 
             onClicked: operationClicked("add");
 
-            Shortcut {
-                sequence: "+"
-                onActivated: operationClicked("add")
-            }
         }
 
         Button
@@ -294,10 +290,6 @@ Item {
 
             onClicked: operationClicked("sub");
 
-            Shortcut {
-                sequence: "-"
-                onActivated: operationClicked("sub")
-            }
         }
 
         Button
@@ -313,10 +305,6 @@ Item {
 
             onClicked: operationClicked("mul");
 
-            Shortcut {
-                sequence: "*"
-                onActivated: operationClicked("mul")
-            }
         }
 
         Button
@@ -332,10 +320,26 @@ Item {
 
             onClicked: operationClicked("div");
 
-            Shortcut {
-                sequence: "/"
-                onActivated: operationClicked("div")
-            }
+        }
+
+        Shortcut {
+            sequence: "+"
+            onActivated: operationClicked("add")
+        }
+
+        Shortcut {
+            sequence: "-"
+            onActivated: operationClicked("sub")
+        }
+
+        Shortcut {
+            sequence: "*"
+            onActivated: operationClicked("mul")
+        }
+
+        Shortcut {
+            sequence: "/"
+            onActivated: operationClicked("div")
         }
     }
 }
