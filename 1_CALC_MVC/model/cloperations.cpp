@@ -8,17 +8,39 @@ CLIArithmeticOperation::CLIArithmeticOperation(std::shared_ptr<CLModel> newModel
 
 QString CLIArithmeticOperation::getResult()
 {
-    return QString::number(this->model->getResult());
+    return (this->precision == -1) ? QString::number(this->model->getResult(), 'e') :
+           (this->precision == 0)  ? QString::number(this->model->getResult()) :
+                                     QString::number(this->model->getResult(), 'f', this->precision);
 }
 
 void CLIArithmeticOperation::setResult(const QString& result)
 {
+    updatePrecision(result);
     this->model->setResult(result.toDouble());
 }
 
 void CLIArithmeticOperation::setDelta(const QString& delta)
 {
+    updatePrecision(delta);
     this->model->setDelta(delta.toDouble());
+}
+
+void CLIArithmeticOperation::updatePrecision(const QString& forThisString)
+{
+    auto size = forThisString.size();
+    if(size > this->MaxDisplaySize)
+    {
+        this->precision = -1;
+        return;
+    }
+
+    auto index = forThisString.indexOf('.', 0, Qt::CaseInsensitive);
+    if(index == -1)
+        return;
+
+    auto updatedPrecision = size - index - 1;
+    if(updatedPrecision > this->precision)
+        this->precision = static_cast<short>(updatedPrecision);
 }
 
 CLOAddition::CLOAddition(std::shared_ptr<CLModel> newModel) : CLIArithmeticOperation(newModel)

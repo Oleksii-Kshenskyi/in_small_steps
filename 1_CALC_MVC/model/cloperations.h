@@ -8,6 +8,8 @@
 class CLIArithmeticOperation
 {
   public:
+    static const short MaxDisplaySize = 26;
+
     CLIArithmeticOperation(std::shared_ptr<CLModel> newModel);
     virtual ~CLIArithmeticOperation() = default;
 
@@ -16,8 +18,10 @@ class CLIArithmeticOperation
     void setDelta(const QString& delta);
     virtual void execute() = 0;
   protected:
-    std::shared_ptr<CLModel> model;
+    void updatePrecision(const QString& forThisString);
 
+    short precision = 0;
+    std::shared_ptr<CLModel> model;
 };
 
 class CLOAddition: public CLIArithmeticOperation
