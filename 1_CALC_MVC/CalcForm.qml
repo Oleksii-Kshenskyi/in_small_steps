@@ -41,56 +41,6 @@ Item {
         return op[index];
     }
 
-    Shortcut {
-        sequence: "0"
-        onActivated: numberClicked("0")
-    }
-
-    Shortcut {
-        sequence: "1"
-        onActivated: numberClicked("1")
-    }
-
-    Shortcut {
-        sequence: "2"
-        onActivated: numberClicked("2")
-    }
-
-    Shortcut {
-        sequence: "3"
-        onActivated: numberClicked("3")
-    }
-
-    Shortcut {
-        sequence: "4"
-        onActivated: numberClicked("4")
-    }
-
-    Shortcut {
-        sequence: "5"
-        onActivated: numberClicked("5")
-    }
-
-    Shortcut {
-        sequence: "6"
-        onActivated: numberClicked("6")
-    }
-
-    Shortcut {
-        sequence: "7"
-        onActivated: numberClicked("7")
-    }
-
-    Shortcut {
-        sequence: "8"
-        onActivated: numberClicked("8")
-    }
-
-    Shortcut {
-        sequence: "9"
-        onActivated: numberClicked("9")
-    }
-
     GridLayout {
         id: grid
         anchors.fill: parent
@@ -210,6 +160,11 @@ Item {
                 onClicked:
                 {
                     numberClicked(text);
+                }
+
+                Shortcut {
+                    sequence: index.toString(10)
+                    onActivated: numberClicked(index.toString(10))
                 }
             }
         }
