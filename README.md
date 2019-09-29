@@ -35,6 +35,7 @@ increment the 1st number.
   - **(REFACTORED)** Pack all operation buttons into one repeater (and their shortcuts too);
   - Add labels/tips with notifications for upper line control button shortcuts.
   - **BUG:** When trying to start a new operation after the previous one has just been finished (pressing a number after =), instead of starting a new operation the calculator currently continues calculating the previous operation. Operation sequencing got broken again at some point, needs further investigation;
+  - **BUG:** Keyboard shortcut for 9 doesn't work (look into the number repeater);
   - **REFACTOR:** Prettify the code. Currently only includes the most obvious refactors like the QObject compiler warning and the above-mentioned QML refactors. Also the formatting of the curly braces in the QML file is inconsistent;
   - **ANALYSIS:** Analyze what else can be refactored codewise.
 
