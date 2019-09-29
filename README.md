@@ -67,5 +67,13 @@ Behind the scenes features:
 + **(DONE)** Saving the items to a simple JSON on application termination and restore the saved tasks on startup
 + **(DONE)** Provide keyboard shortcuts for all the operations stated above.
 
+## 4 - Fix KAAString
+A very old, 8 year old at the moment of writing (end of Sep 2019), piece of code has been found. An old C++ string implementation I'd started when I was a student and didn't know much about programming. It didn't work correctly at the time (mostly because of a few memory leaks I'd caused and was unable to spot them), I asked several forums and even some of my uni professors to help, but no one was able to so the problems remained unsolved. Now that I have at least some experience in programming, I'm hoping I'll be able to finally solve its problems. To be clear, there's no intention to make this code pretty and/or practically applicable/usable anywhere, the point is just to fix 8 year old mistakes. It includes:
+- Covering the class with unit tests so that I could be sure it actually worked;
+- Making it compile;
+- Making it work as expected (meaning finding all the old bugs that were plaguing the code when I'd dropped it).
+
+## 5 - Interview questions (!!!FINISHED!!!)
+This project is finished as soon as the first commit is made. This is not an application of any sorts, it's just a collection of interview questions I was unable to answer at the time of asking. The point is to collect good/fun/interesting programming interview questions and finding solutions to them.
 
 by Oleksii <DarkSpectre> Kshenskyi.
