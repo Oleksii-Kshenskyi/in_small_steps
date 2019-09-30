@@ -3,6 +3,7 @@
 #include <iterator>
 #include <algorithm>
 
+//What is the lowest C++ standard necessary for this to compile?
 int main()
 {
     std::vector vec {6, 10, 6, 7, 6, 8, 6};
